@@ -1,0 +1,38 @@
+.parallax-enabled section.parallax-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.parallax-enabled section.parallax-section::after {
+  content: "";
+  position: absolute;
+  inset: -12% -5%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  background:
+    radial-gradient(60% 45% at 20% 20%, rgba(255, 255, 255, 0.14), transparent 70%),
+    radial-gradient(45% 35% at 80% 70%, rgba(255, 255, 255, 0.1), transparent 72%);
+  translate: 0 var(--section-parallax-y, 0px);
+  transition: translate 140ms linear;
+}
+
+.parallax-enabled section.parallax-section > :not(.absolute) {
+  position: relative;
+  z-index: 1;
+}
+
+.parallax-enabled section img.parallax-image {
+  translate: 0 var(--image-parallax-y, 0px);
+  transition: translate 120ms linear;
+  will-change: translate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-enabled section.parallax-section::after,
+  .parallax-enabled section img.parallax-image {
+    transition: none;
+    translate: 0 0;
+  }
+}
