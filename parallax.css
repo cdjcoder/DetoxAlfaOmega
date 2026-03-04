@@ -2,6 +2,36 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  transform-style: preserve-3d;
+  perspective: 900px;
+}
+
+.parallax-enabled section.parallax-section::before {
+  content: "";
+  position: absolute;
+  inset: -45% -30%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: var(--section-grid-x, 0px) var(--section-grid-y, 0px);
+  transform-origin: 50% 100%;
+  transform:
+    perspective(1200px)
+    rotateX(calc(64deg + var(--section-tilt-x, 0deg)))
+    rotateY(var(--section-tilt-y, 0deg))
+    translate3d(0, var(--section-grid-y, 0px), var(--section-depth, 0px))
+    scale(1.28);
+  mask-image: radial-gradient(
+    ellipse at 50% 90%,
+    rgba(0, 0, 0, 0.95) 18%,
+    rgba(0, 0, 0, 0.45) 50%,
+    transparent 78%
+  );
+  transition: transform 160ms linear, background-position 180ms linear;
 }
 
 .parallax-enabled section.parallax-section::after {
@@ -10,12 +40,13 @@
   inset: -12% -5%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.16;
+  opacity: 0.19;
   background:
-    radial-gradient(60% 45% at 20% 20%, rgba(255, 255, 255, 0.14), transparent 70%),
-    radial-gradient(45% 35% at 80% 70%, rgba(255, 255, 255, 0.1), transparent 72%);
-  translate: 0 var(--section-parallax-y, 0px);
-  transition: translate 140ms linear;
+    radial-gradient(50% 42% at 18% 22%, rgba(255, 255, 255, 0.24), transparent 72%),
+    radial-gradient(42% 34% at 82% 72%, rgba(255, 255, 255, 0.18), transparent 74%),
+    radial-gradient(62% 52% at 50% 115%, rgba(56, 189, 248, 0.14), transparent 70%);
+  translate: var(--section-parallax-x, 0px) var(--section-parallax-y, 0px);
+  transition: translate 140ms linear, opacity 200ms linear;
 }
 
 .parallax-enabled section.parallax-section > :not(.absolute) {
@@ -24,12 +55,14 @@
 }
 
 .parallax-enabled section img.parallax-image {
-  translate: 0 var(--image-parallax-y, 0px);
-  transition: translate 120ms linear;
-  will-change: translate;
+  translate: var(--image-parallax-x, 0px) var(--image-parallax-y, 0px);
+  box-shadow: 0 calc(10px + var(--image-shadow-depth, 0px)) 36px rgba(2, 6, 23, 0.28);
+  transition: translate 120ms linear, box-shadow 150ms linear;
+  will-change: translate, box-shadow;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .parallax-enabled section.parallax-section::before,
   .parallax-enabled section.parallax-section::after,
   .parallax-enabled section img.parallax-image {
     transition: none;
