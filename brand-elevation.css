@@ -1,0 +1,324 @@
+:root {
+  --brand-bg: #060f2b;
+  --brand-ink: #f8fafc;
+  --brand-ink-soft: #dbeafe;
+  --brand-accent: #ff6f7f;
+  --brand-accent-strong: #f43f5e;
+  --brand-radius-card: 22px;
+  --brand-radius-pill: 9999px;
+  --brand-space-section: clamp(4.25rem, 7vw, 7.5rem);
+  --type-step--1: clamp(0.9rem, 0.84rem + 0.2vw, 1rem);
+  --type-step-0: clamp(1.02rem, 0.94rem + 0.35vw, 1.2rem);
+  --type-step-1: clamp(1.16rem, 1.05rem + 0.55vw, 1.44rem);
+  --type-step-2: clamp(1.35rem, 1.16rem + 0.85vw, 1.9rem);
+  --type-step-3: clamp(1.85rem, 1.42rem + 1.7vw, 3.15rem);
+  --type-step-4: clamp(2.4rem, 1.7rem + 3.15vw, 5.25rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+  background: radial-gradient(circle at 20% -10%, #1d4ed8 0%, rgba(29, 78, 216, 0) 34%),
+    radial-gradient(circle at 90% 0%, #7e22ce 0%, rgba(126, 34, 206, 0) 32%), var(--brand-bg);
+  color: var(--brand-ink);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root h1,
+#root h2,
+#root h3,
+#root h4 {
+  font-family: "Lexend Deca", "Poppins", system-ui, sans-serif !important;
+  letter-spacing: -0.025em !important;
+}
+
+#root h1 {
+  font-size: var(--type-step-4) !important;
+  line-height: 1.04 !important;
+}
+
+#root h2 {
+  font-size: var(--type-step-3) !important;
+  line-height: 1.08 !important;
+}
+
+#root h3 {
+  font-size: var(--type-step-2) !important;
+  line-height: 1.18 !important;
+}
+
+#root p,
+#root li,
+#root label,
+#root input,
+#root select,
+#root textarea {
+  letter-spacing: 0.01em;
+}
+
+#root p {
+  font-size: var(--type-step-0);
+  line-height: 1.72;
+}
+
+#root .text-xs {
+  font-size: var(--type-step--1) !important;
+  line-height: 1.55 !important;
+}
+
+#root .text-sm {
+  font-size: var(--type-step-0) !important;
+  line-height: 1.62 !important;
+}
+
+#root .text-base {
+  font-size: var(--type-step-1) !important;
+  line-height: 1.65 !important;
+}
+
+#root .text-lg {
+  font-size: clamp(1.28rem, 1.1rem + 0.7vw, 1.8rem) !important;
+  line-height: 1.58 !important;
+}
+
+#root .text-xl {
+  font-size: clamp(1.45rem, 1.18rem + 1.05vw, 2.15rem) !important;
+  line-height: 1.54 !important;
+}
+
+#root .text-2xl {
+  font-size: clamp(1.8rem, 1.35rem + 1.4vw, 2.7rem) !important;
+}
+
+#root .text-3xl {
+  font-size: clamp(2.1rem, 1.5rem + 2vw, 3.45rem) !important;
+}
+
+#root .text-4xl {
+  font-size: clamp(2.5rem, 1.8rem + 2.6vw, 4.2rem) !important;
+}
+
+#root .text-5xl,
+#root .text-6xl,
+#root .text-7xl {
+  line-height: 1.03 !important;
+}
+
+#root > div > section {
+  padding-top: var(--brand-space-section) !important;
+  padding-bottom: var(--brand-space-section) !important;
+  position: relative;
+}
+
+#root > div > section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(1200px 400px at 50% -10%, rgba(255, 255, 255, 0.09), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%, transparent 78%, rgba(2, 6, 23, 0.14));
+  opacity: 0.55;
+}
+
+#root > div > section > div {
+  position: relative;
+  z-index: 1;
+  padding-left: clamp(1rem, 2.8vw, 2.1rem) !important;
+  padding-right: clamp(1rem, 2.8vw, 2.1rem) !important;
+}
+
+#root .max-w-4xl,
+#root .max-w-5xl,
+#root .max-w-6xl {
+  width: min(1180px, 94vw) !important;
+}
+
+#root .max-w-3xl {
+  width: min(980px, 94vw) !important;
+}
+
+#root .grid {
+  gap: clamp(1rem, 1.8vw, 2rem) !important;
+}
+
+#root .rounded-2xl,
+#root .rounded-3xl,
+#root .rounded-xl {
+  border-radius: var(--brand-radius-card) !important;
+}
+
+#root .rounded-full {
+  border-radius: var(--brand-radius-pill) !important;
+}
+
+#root .bg-white\/5,
+#root .bg-white\/10,
+#root .bg-white\/15,
+#root .bg-white\/20,
+#root .bg-white\/60,
+#root .bg-white\/70,
+#root .bg-white\/80,
+#root .bg-gray-900\/30,
+#root .bg-gray-950,
+#root .bg-black {
+  backdrop-filter: blur(12px) saturate(1.08);
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+#root > div > section:nth-of-type(-n + 9) .text-gray-300,
+#root > div > section:nth-of-type(-n + 9) .text-gray-400 {
+  color: #d7e4ff !important;
+}
+
+#root > div > section:nth-of-type(-n + 9) .text-gray-500,
+#root > div > section:nth-of-type(-n + 9) .text-gray-600 {
+  color: #b8c8ef !important;
+}
+
+#root > div > section:nth-of-type(-n + 9) .text-amber-100\/80,
+#root > div > section:nth-of-type(-n + 9) .text-amber-100\/90,
+#root > div > section:nth-of-type(-n + 9) .text-amber-100 {
+  color: #fff3dc !important;
+}
+
+#root > div > section:nth-of-type(n + 10) .text-gray-500,
+#root > div > section:nth-of-type(n + 10) .text-gray-600 {
+  color: #1f3b68 !important;
+}
+
+#root > div > section:nth-of-type(n + 10) .text-emerald-800,
+#root > div > section:nth-of-type(n + 10) .text-emerald-900 {
+  color: #0b3e36 !important;
+}
+
+#root a[href="#order"],
+#root a[href="#truth"],
+#root a[href="#order-form"],
+#root button[type="submit"],
+#root nav a,
+#root nav button {
+  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 240ms ease,
+    background-color 240ms ease, border-color 240ms ease !important;
+}
+
+#root a[href="#order"]:hover,
+#root a[href="#truth"]:hover,
+#root a[href="#order-form"]:hover,
+#root button[type="submit"]:hover,
+#root nav a:hover,
+#root nav button:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+#root button[type="submit"],
+#root a[href="#order"] {
+  box-shadow: 0 16px 34px rgba(127, 29, 29, 0.34);
+}
+
+#root .micro-cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#root .micro-cta::before {
+  content: "";
+  position: absolute;
+  inset: -120% -38%;
+  background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+  transform: translateX(-130%) rotate(6deg);
+  transition: transform 500ms ease;
+  pointer-events: none;
+}
+
+#root .micro-cta:hover::before {
+  transform: translateX(130%) rotate(6deg);
+}
+
+#root input,
+#root select,
+#root textarea {
+  font-size: clamp(1rem, 0.95rem + 0.35vw, 1.16rem) !important;
+  line-height: 1.5;
+  border-radius: 14px !important;
+}
+
+#root label {
+  font-size: clamp(0.98rem, 0.92rem + 0.25vw, 1.08rem) !important;
+  font-weight: 600 !important;
+}
+
+#root .micro-card {
+  position: relative;
+  transform: translateY(0) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 280ms ease,
+    border-color 280ms ease;
+}
+
+#root .micro-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    360px 180px at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(147, 197, 253, 0.17),
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+#root .micro-card:hover {
+  transform: translateY(-6px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
+  box-shadow: 0 24px 46px rgba(2, 8, 23, 0.3);
+  border-color: rgba(191, 219, 254, 0.45) !important;
+}
+
+#root .micro-card:hover::before {
+  opacity: 1;
+}
+
+[data-aos] {
+  will-change: transform, opacity;
+}
+
+.parallax-enabled section.parallax-section::before {
+  opacity: 0.08;
+}
+
+.parallax-enabled section.parallax-section::after {
+  opacity: 0.13;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --brand-space-section: clamp(3.2rem, 7vw, 5rem);
+  }
+
+  #root .grid {
+    gap: 0.95rem !important;
+  }
+
+  #root > div > section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .micro-card,
+  #root .micro-card::before,
+  #root a,
+  #root button {
+    transition: none !important;
+    transform: none !important;
+  }
+}
