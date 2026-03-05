@@ -1,20 +1,11 @@
 #root > div > section:first-of-type {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 70vh !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(
-      180deg,
-      rgba(10, 35, 95, 0.48) 0%,
-      rgba(11, 40, 103, 0.2) 42%,
-      rgba(8, 22, 63, 0.58) 100%
-    ),
-    url("./Junk%20food.png");
-  background-size: cover;
-  background-position: center 42%;
-  background-repeat: no-repeat;
+  background: transparent !important;
 }
 
 #root > div > section:first-of-type::after,
@@ -23,12 +14,32 @@
 }
 
 #root > div > section:first-of-type > .absolute.inset-0 {
+  display: block !important;
+  z-index: 0 !important;
+  pointer-events: none;
+  background-image: url("/Junk%20food.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#root > div > section:first-of-type > .absolute.inset-0 > img {
   display: none !important;
+}
+
+#root > div > section:first-of-type > .absolute.inset-0 > .absolute.inset-0 {
+  z-index: 1 !important;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.52) 0%,
+    rgba(0, 0, 0, 0.45) 42%,
+    rgba(0, 0, 0, 0.62) 100%
+  ) !important;
 }
 
 #root > div > section:first-of-type > .relative.z-10 {
   position: relative;
-  z-index: 2;
+  z-index: 2 !important;
   text-align: center;
 }
 
@@ -119,6 +130,10 @@
 }
 
 @media (max-width: 900px) {
+  #root > div > section:first-of-type {
+    min-height: 60vh !important;
+  }
+
   #root > div > section:first-of-type h1 {
     font-size: clamp(2.3rem, 1.82rem + 3.6vw, 3.6rem) !important;
   }
