@@ -1,3 +1,5 @@
+/* ── Hero section: junk-food background ── */
+
 #root > div > section:first-of-type {
   position: relative;
   overflow: hidden;
@@ -5,9 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent !important;
-  background-image: none !important;
-  background-color: transparent !important;
 }
 
 #root > div > section:first-of-type::after,
@@ -15,31 +14,21 @@
   display: none !important;
 }
 
+/* Overlay: semi-transparent black only */
 #root > div > section:first-of-type > .absolute.inset-0 {
-  display: block !important;
   z-index: 0 !important;
   pointer-events: none;
-  background-image: url("/junk-food.png") !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
+  background: rgba(0, 0, 0, 0.5) !important;
 }
 
-#root > div > section:first-of-type > .absolute.inset-0 > img {
-  display: none !important;
-}
-
-#root > div > section:first-of-type > .absolute.inset-0 > .absolute.inset-0 {
-  z-index: 1 !important;
-  background: rgba(0, 0, 0, 0.54) !important;
-}
-
+/* Content stays on top */
 #root > div > section:first-of-type > .relative.z-10 {
   position: relative;
   z-index: 20 !important;
   text-align: center;
 }
 
+/* Badge */
 #root > div > section:first-of-type .inline-flex.items-center.gap-2 {
   border-radius: 9999px;
   background: rgba(127, 29, 29, 0.52) !important;
@@ -48,6 +37,7 @@
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.35);
 }
 
+/* Heading */
 #root > div > section:first-of-type h1 {
   font-size: clamp(3.1rem, 2.4rem + 2.85vw, 5.95rem) !important;
   max-width: 960px;
@@ -63,6 +53,7 @@
   color: #ff6f80 !important;
 }
 
+/* Subtitle / body text */
 #root > div > section:first-of-type p.text-xl,
 #root > div > section:first-of-type p.text-lg {
   color: rgba(241, 245, 249, 0.95) !important;
@@ -80,6 +71,7 @@
   font-size: clamp(0.96rem, 0.9rem + 0.22vw, 1.08rem) !important;
 }
 
+/* CTA buttons */
 #root > div > section:first-of-type a[href="#truth"] {
   background: rgba(255, 255, 255, 0.2) !important;
   border-color: rgba(255, 255, 255, 0.38) !important;
@@ -100,6 +92,7 @@
   border-radius: 14px !important;
 }
 
+/* Stats grid */
 #root > div > section:first-of-type .grid.grid-cols-3 {
   border-color: rgba(255, 255, 255, 0.22) !important;
   max-width: 760px;
@@ -121,17 +114,10 @@
   line-height: 1 !important;
 }
 
+/* Parallax overrides */
 .parallax-enabled #root > div > section:first-of-type.parallax-section::before,
 .parallax-enabled #root > div > section:first-of-type.parallax-section::after {
   display: none !important;
-}
-
-#root > div > section:first-of-type > .absolute.inset-0 {
-  z-index: 0 !important;
-}
-
-#root > div > section:first-of-type > .absolute.inset-0 > .absolute.inset-0 {
-  z-index: 10 !important;
 }
 
 @media (max-width: 900px) {
