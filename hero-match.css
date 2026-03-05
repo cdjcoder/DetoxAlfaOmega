@@ -48,14 +48,15 @@
 
 /* ── Heading ── */
 #root > div > section:first-of-type h1 {
-  font-size: clamp(3.1rem, 2.4rem + 2.85vw, 5.95rem) !important;
+  font-family: "Lexend Deca", "Poppins", system-ui, sans-serif !important;
+  font-size: clamp(2.8rem, 2.2rem + 2.6vw, 5.5rem) !important;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   color: #ffffff !important;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.03em;
-  line-height: 1.05 !important;
+  line-height: 1.06 !important;
 }
 
 #root > div > section:first-of-type h1 span {
