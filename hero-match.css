@@ -1,11 +1,13 @@
 #root > div > section:first-of-type {
   position: relative;
   overflow: hidden;
-  min-height: 70vh !important;
+  min-height: 80vh !important;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent !important;
+  background-image: none !important;
+  background-color: transparent !important;
 }
 
 #root > div > section:first-of-type::after,
@@ -17,10 +19,10 @@
   display: block !important;
   z-index: 0 !important;
   pointer-events: none;
-  background-image: url("/Junk%20food.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-image: url("/junk-food.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
 
 #root > div > section:first-of-type > .absolute.inset-0 > img {
@@ -29,17 +31,12 @@
 
 #root > div > section:first-of-type > .absolute.inset-0 > .absolute.inset-0 {
   z-index: 1 !important;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.52) 0%,
-    rgba(0, 0, 0, 0.45) 42%,
-    rgba(0, 0, 0, 0.62) 100%
-  ) !important;
+  background: rgba(0, 0, 0, 0.54) !important;
 }
 
 #root > div > section:first-of-type > .relative.z-10 {
   position: relative;
-  z-index: 2 !important;
+  z-index: 20 !important;
   text-align: center;
 }
 
@@ -129,9 +126,17 @@
   display: none !important;
 }
 
+#root > div > section:first-of-type > .absolute.inset-0 {
+  z-index: 0 !important;
+}
+
+#root > div > section:first-of-type > .absolute.inset-0 > .absolute.inset-0 {
+  z-index: 10 !important;
+}
+
 @media (max-width: 900px) {
   #root > div > section:first-of-type {
-    min-height: 60vh !important;
+    min-height: 65vh !important;
   }
 
   #root > div > section:first-of-type h1 {
