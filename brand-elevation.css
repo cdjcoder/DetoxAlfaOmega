@@ -155,7 +155,7 @@ body {
   position: relative;
 }
 
-#root > div > section::after {
+#root > div > section:not(#order)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -164,6 +164,10 @@ body {
     radial-gradient(ellipse 900px 300px at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.06) 100%);
   opacity: 0.7;
+}
+
+#root > div > section#order::after {
+  display: none;
 }
 
 #root > div > section > div {
@@ -365,15 +369,19 @@ body {
   opacity: 1;
 }
 
-/* ── Image Treatment ── */
+/* ── Image Treatment (dark sections only, not order/form areas) ── */
 
-#root section img {
+#root > div > section:not(#order) img {
   border-radius: var(--brand-radius-card);
   transition: transform 600ms var(--ease-out-expo), box-shadow 400ms ease;
 }
 
-#root section img:hover {
+#root > div > section:not(#order) img:hover {
   transform: scale(1.03);
+}
+
+#root > div > section#order img {
+  border-radius: var(--brand-radius-card);
 }
 
 /* ── Section Divider (subtle top-edge glow) ── */
