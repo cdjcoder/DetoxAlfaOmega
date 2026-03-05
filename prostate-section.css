@@ -1,0 +1,213 @@
+.prostate-section {
+  background: linear-gradient(165deg, #081735 0%, #0a1e47 52%, #08142e 100%);
+}
+
+.prostate-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.prostate-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  background: rgba(127, 29, 29, 0.4);
+  margin-bottom: 1.35rem;
+}
+
+.prostate-title {
+  font-size: clamp(2rem, 1.4rem + 2.6vw, 4.1rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  color: #f8fafc;
+  text-wrap: balance;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 18px 38px rgba(2, 6, 23, 0.44);
+}
+
+.prostate-title .accent {
+  color: #ff7a8f;
+}
+
+.prostate-lead {
+  color: #e6efff;
+  font-size: clamp(1.08rem, 1rem + 0.45vw, 1.35rem);
+  line-height: 1.76;
+  max-width: 72ch;
+}
+
+.prostate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.prostate-card {
+  border-radius: 20px;
+  border: 1px solid rgba(191, 219, 254, 0.2);
+  background: rgba(15, 23, 42, 0.46);
+  backdrop-filter: blur(10px);
+  padding: 1.3rem 1.2rem;
+}
+
+.prostate-card h3 {
+  margin: 0 0 0.75rem 0;
+  color: #f8fafc;
+  font-size: clamp(1.25rem, 1.06rem + 0.65vw, 1.75rem);
+  line-height: 1.24;
+}
+
+.prostate-card p,
+.prostate-copy p {
+  margin: 0;
+  color: #d9e6ff;
+  font-size: clamp(1rem, 0.95rem + 0.35vw, 1.14rem);
+  line-height: 1.74;
+}
+
+.prostate-section h2,
+.prostate-section h3,
+.prostate-section h4 {
+  font-family: "Lexend Deca", "Poppins", sans-serif;
+}
+
+.prostate-copy {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.prostate-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.prostate-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: #e6efff;
+  font-size: clamp(1rem, 0.95rem + 0.34vw, 1.14rem);
+  line-height: 1.68;
+}
+
+.prostate-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 0.68rem;
+  height: 0.68rem;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #fb7185, #f43f5e);
+  box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.2);
+}
+
+.prostate-table-wrap {
+  margin-top: 1.2rem;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(191, 219, 254, 0.24);
+  background: rgba(10, 17, 37, 0.52);
+}
+
+.prostate-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prostate-table th,
+.prostate-table td {
+  padding: 0.92rem 1rem;
+  text-align: left;
+}
+
+.prostate-table th {
+  background: rgba(127, 29, 29, 0.45);
+  color: #fecaca;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prostate-table td {
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.prostate-table td:last-child {
+  color: #dbeafe;
+  font-weight: 600;
+}
+
+.prostate-cta {
+  margin-top: 2rem;
+  border-radius: 22px;
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  background: linear-gradient(165deg, rgba(127, 29, 29, 0.42), rgba(30, 41, 59, 0.46));
+  padding: clamp(1.2rem, 1.2rem + 0.8vw, 1.8rem);
+}
+
+.prostate-cta p {
+  color: #fef2f2;
+  margin: 0;
+}
+
+.prostate-cta p + p {
+  margin-top: 0.7rem;
+}
+
+.prostate-actions {
+  margin-top: 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.prostate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 0.85rem 1.2rem;
+  font-weight: 800;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.prostate-btn-primary {
+  background: linear-gradient(180deg, #ff617b, #e94762);
+  color: #fff;
+  box-shadow: 0 16px 30px rgba(127, 29, 29, 0.34);
+}
+
+.prostate-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #f8fafc;
+}
+
+.prostate-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .prostate-grid {
+    grid-template-columns: 1fr;
+  }
+}
