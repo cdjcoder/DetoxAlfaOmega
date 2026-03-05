@@ -478,7 +478,7 @@ function submitOrder(event) {
   btn.disabled = true;
   btn.querySelector('span').textContent = isEn ? 'Opening your email...' : 'Abriendo tu correo...';
 
-  const subject = encodeURIComponent(`🌿 Renewal Protocol Order — ${total} — ${name}`);
+  const subject = encodeURIComponent(`🌿 Renewal Protocol Reservation Deposit — ${total} — ${name}`);
   const body = encodeURIComponent(`THE RENEWAL PROTOCOL — NEW ORDER
 ===================================
 Total: ${total}  |  Qty: ${qty} × $98
@@ -526,7 +526,7 @@ Notes: ${notes}
 
     // Re-enable button
     btn.disabled = false;
-    btn.querySelector('span').textContent = isEn ? 'Reserve My Protocol — $98 →' : 'Reservar Mi Protocolo — $98 →';
+    btn.querySelector('span').textContent = isEn ? 'Reserve My Kit — $98 Deposit →' : 'Reservar Mi Kit — Depósito $98 →';
   }, 800);
 }
 
