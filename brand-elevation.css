@@ -1,19 +1,37 @@
+/* ═══════════════════════════════════════════════════
+   BRAND ELEVATION — Premium Visual System
+   ═══════════════════════════════════════════════════ */
+
 :root {
-  --brand-bg: #060f2b;
-  --brand-ink: #f8fafc;
-  --brand-ink-soft: #dbeafe;
-  --brand-accent: #ff6f7f;
+  --brand-bg: #060a18;
+  --brand-bg-alt: #0b1128;
+  --brand-ink: #f1f5f9;
+  --brand-ink-soft: #cbd5e1;
+  --brand-accent: #ff6b7f;
   --brand-accent-strong: #f43f5e;
-  --brand-radius-card: 22px;
+  --brand-accent-glow: rgba(244, 63, 94, 0.15);
+  --brand-glass: rgba(15, 23, 42, 0.55);
+  --brand-glass-border: rgba(255, 255, 255, 0.08);
+  --brand-glass-strong: rgba(10, 15, 30, 0.72);
+  --brand-radius-card: 20px;
   --brand-radius-pill: 9999px;
-  --brand-space-section: clamp(4.25rem, 7vw, 7.5rem);
-  --type-step--1: clamp(0.9rem, 0.84rem + 0.2vw, 1rem);
-  --type-step-0: clamp(1.02rem, 0.94rem + 0.35vw, 1.2rem);
-  --type-step-1: clamp(1.16rem, 1.05rem + 0.55vw, 1.44rem);
-  --type-step-2: clamp(1.35rem, 1.16rem + 0.85vw, 1.9rem);
-  --type-step-3: clamp(1.85rem, 1.42rem + 1.7vw, 3.15rem);
-  --type-step-4: clamp(2.4rem, 1.7rem + 3.15vw, 5.25rem);
+  --brand-space-section: clamp(5rem, 8vw, 8rem);
+  --brand-space-inner: clamp(1.25rem, 3vw, 2.25rem);
+
+  /* Strict typographic scale (1.25 ratio) */
+  --type-step--2: clamp(0.72rem, 0.68rem + 0.16vw, 0.8rem);
+  --type-step--1: clamp(0.84rem, 0.8rem + 0.18vw, 0.94rem);
+  --type-step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --type-step-1: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  --type-step-2: clamp(1.35rem, 1.15rem + 0.85vw, 1.875rem);
+  --type-step-3: clamp(1.75rem, 1.35rem + 1.6vw, 2.8rem);
+  --type-step-4: clamp(2.25rem, 1.6rem + 2.8vw, 4.5rem);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+/* ── Global Reset & Base ── */
 
 html {
   scroll-behavior: smooth;
@@ -21,34 +39,52 @@ html {
 
 body {
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif !important;
-  background: radial-gradient(circle at 20% -10%, #1d4ed8 0%, rgba(29, 78, 216, 0) 34%),
-    radial-gradient(circle at 90% 0%, #7e22ce 0%, rgba(126, 34, 206, 0) 32%), var(--brand-bg);
+  background: var(--brand-bg);
+  background-image:
+    radial-gradient(ellipse 120% 60% at 15% -5%, rgba(30, 64, 175, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 85% 5%, rgba(126, 34, 206, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(6, 10, 24, 1) 0%, transparent 70%);
   color: var(--brand-ink);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+::selection {
+  background: rgba(244, 63, 94, 0.25);
+  color: #fff;
+}
+
+/* ── Typography: Lexend Deca for headings, Poppins for body ── */
 
 #root h1,
 #root h2,
 #root h3,
 #root h4 {
   font-family: "Lexend Deca", "Poppins", system-ui, sans-serif !important;
-  letter-spacing: -0.025em !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 800 !important;
+  text-wrap: balance;
 }
 
 #root h1 {
   font-size: var(--type-step-4) !important;
-  line-height: 1.04 !important;
+  line-height: 1.05 !important;
 }
 
 #root h2 {
   font-size: var(--type-step-3) !important;
-  line-height: 1.08 !important;
+  line-height: 1.1 !important;
 }
 
 #root h3 {
   font-size: var(--type-step-2) !important;
-  line-height: 1.18 !important;
+  line-height: 1.2 !important;
+}
+
+#root h4 {
+  font-size: var(--type-step-1) !important;
+  line-height: 1.3 !important;
 }
 
 #root p,
@@ -57,56 +93,61 @@ body {
 #root input,
 #root select,
 #root textarea {
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
 }
 
 #root p {
   font-size: var(--type-step-0);
-  line-height: 1.72;
+  line-height: 1.75;
 }
 
 #root .text-xs {
-  font-size: var(--type-step--1) !important;
-  line-height: 1.55 !important;
+  font-size: var(--type-step--2) !important;
+  line-height: 1.5 !important;
 }
 
 #root .text-sm {
-  font-size: var(--type-step-0) !important;
-  line-height: 1.62 !important;
+  font-size: var(--type-step--1) !important;
+  line-height: 1.6 !important;
 }
 
 #root .text-base {
-  font-size: var(--type-step-1) !important;
-  line-height: 1.65 !important;
+  font-size: var(--type-step-0) !important;
+  line-height: 1.7 !important;
 }
 
 #root .text-lg {
-  font-size: clamp(1.28rem, 1.1rem + 0.7vw, 1.8rem) !important;
-  line-height: 1.58 !important;
+  font-size: var(--type-step-1) !important;
+  line-height: 1.6 !important;
 }
 
 #root .text-xl {
-  font-size: clamp(1.45rem, 1.18rem + 1.05vw, 2.15rem) !important;
-  line-height: 1.54 !important;
+  font-size: clamp(1.35rem, 1.15rem + 0.85vw, 1.9rem) !important;
+  line-height: 1.55 !important;
 }
 
 #root .text-2xl {
-  font-size: clamp(1.8rem, 1.35rem + 1.4vw, 2.7rem) !important;
+  font-size: var(--type-step-2) !important;
+  line-height: 1.3 !important;
 }
 
 #root .text-3xl {
-  font-size: clamp(2.1rem, 1.5rem + 2vw, 3.45rem) !important;
+  font-size: clamp(1.9rem, 1.4rem + 1.8vw, 3rem) !important;
+  line-height: 1.15 !important;
 }
 
 #root .text-4xl {
-  font-size: clamp(2.5rem, 1.8rem + 2.6vw, 4.2rem) !important;
+  font-size: var(--type-step-3) !important;
+  line-height: 1.1 !important;
 }
 
 #root .text-5xl,
 #root .text-6xl,
 #root .text-7xl {
-  line-height: 1.03 !important;
+  line-height: 1.04 !important;
 }
+
+/* ── Section Spacing & Layered Background ── */
 
 #root > div > section {
   padding-top: var(--brand-space-section) !important;
@@ -119,31 +160,38 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(1200px 400px at 50% -10%, rgba(255, 255, 255, 0.09), transparent 70%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%, transparent 78%, rgba(2, 6, 23, 0.14));
-  opacity: 0.55;
+  background:
+    radial-gradient(ellipse 900px 300px at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.06) 100%);
+  opacity: 0.7;
 }
 
 #root > div > section > div {
   position: relative;
   z-index: 1;
-  padding-left: clamp(1rem, 2.8vw, 2.1rem) !important;
-  padding-right: clamp(1rem, 2.8vw, 2.1rem) !important;
+  padding-left: var(--brand-space-inner) !important;
+  padding-right: var(--brand-space-inner) !important;
 }
+
+/* ── Container Widths ── */
 
 #root .max-w-4xl,
 #root .max-w-5xl,
 #root .max-w-6xl {
-  width: min(1180px, 94vw) !important;
+  width: min(1140px, 92vw) !important;
 }
 
 #root .max-w-3xl {
-  width: min(980px, 94vw) !important;
+  width: min(920px, 92vw) !important;
 }
 
+/* ── Grid System ── */
+
 #root .grid {
-  gap: clamp(1rem, 1.8vw, 2rem) !important;
+  gap: clamp(0.875rem, 1.6vw, 1.75rem) !important;
 }
+
+/* ── Glassmorphism Cards ── */
 
 #root .rounded-2xl,
 #root .rounded-3xl,
@@ -159,41 +207,45 @@ body {
 #root .bg-white\/10,
 #root .bg-white\/15,
 #root .bg-white\/20,
-#root .bg-white\/60,
-#root .bg-white\/70,
-#root .bg-white\/80,
 #root .bg-gray-900\/30,
 #root .bg-gray-950,
 #root .bg-black {
-  backdrop-filter: blur(12px) saturate(1.08);
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  backdrop-filter: blur(16px) saturate(1.1);
+  border-color: var(--brand-glass-border) !important;
 }
+
+/* ── Text Colors — Dark Sections ── */
 
 #root > div > section:nth-of-type(-n + 9) .text-gray-300,
 #root > div > section:nth-of-type(-n + 9) .text-gray-400 {
-  color: #d7e4ff !important;
+  color: #c8d6f0 !important;
 }
 
 #root > div > section:nth-of-type(-n + 9) .text-gray-500,
 #root > div > section:nth-of-type(-n + 9) .text-gray-600 {
-  color: #b8c8ef !important;
+  color: #a3b5d6 !important;
 }
 
 #root > div > section:nth-of-type(-n + 9) .text-amber-100\/80,
 #root > div > section:nth-of-type(-n + 9) .text-amber-100\/90,
 #root > div > section:nth-of-type(-n + 9) .text-amber-100 {
-  color: #fff3dc !important;
+  color: #fff5e0 !important;
 }
+
+/* ── Text Colors — Light/Green Sections ── */
 
 #root > div > section:nth-of-type(n + 10) .text-gray-500,
 #root > div > section:nth-of-type(n + 10) .text-gray-600 {
-  color: #1f3b68 !important;
+  color: #1e3a5f !important;
 }
 
 #root > div > section:nth-of-type(n + 10) .text-emerald-800,
 #root > div > section:nth-of-type(n + 10) .text-emerald-900 {
-  color: #0b3e36 !important;
+  color: #064e3b !important;
 }
+
+/* ── CTA Buttons: Hover & Shadow System ── */
 
 #root a[href="#order"],
 #root a[href="#truth"],
@@ -201,8 +253,8 @@ body {
 #root button[type="submit"],
 #root nav a,
 #root nav button {
-  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 240ms ease,
-    background-color 240ms ease, border-color 240ms ease !important;
+  transition: transform 280ms var(--ease-out-expo), box-shadow 280ms var(--ease-smooth),
+    background-color 240ms ease, border-color 240ms ease, opacity 200ms ease !important;
 }
 
 #root a[href="#order"]:hover,
@@ -211,13 +263,28 @@ body {
 #root button[type="submit"]:hover,
 #root nav a:hover,
 #root nav button:hover {
-  transform: translateY(-2px) scale(1.01);
+  transform: translateY(-3px) scale(1.015);
+}
+
+#root a[href="#order"]:active,
+#root a[href="#truth"]:active,
+#root a[href="#order-form"]:active,
+#root button[type="submit"]:active {
+  transform: translateY(-1px) scale(0.99);
+  transition-duration: 80ms !important;
 }
 
 #root button[type="submit"],
 #root a[href="#order"] {
-  box-shadow: 0 16px 34px rgba(127, 29, 29, 0.34);
+  box-shadow: 0 14px 32px rgba(127, 29, 29, 0.35), 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
+#root button[type="submit"]:hover,
+#root a[href="#order"]:hover {
+  box-shadow: 0 20px 44px rgba(127, 29, 29, 0.45), 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Micro CTA Shimmer ── */
 
 #root .micro-cta {
   position: relative;
@@ -229,9 +296,9 @@ body {
   content: "";
   position: absolute;
   inset: -120% -38%;
-  background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.28) 50%, transparent 62%);
   transform: translateX(-130%) rotate(6deg);
-  transition: transform 500ms ease;
+  transition: transform 550ms var(--ease-out-expo);
   pointer-events: none;
 }
 
@@ -239,26 +306,38 @@ body {
   transform: translateX(130%) rotate(6deg);
 }
 
+/* ── Form Elements ── */
+
 #root input,
 #root select,
 #root textarea {
-  font-size: clamp(1rem, 0.95rem + 0.35vw, 1.16rem) !important;
+  font-size: clamp(0.95rem, 0.92rem + 0.2vw, 1.1rem) !important;
   line-height: 1.5;
   border-radius: 14px !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+#root input:focus,
+#root select:focus,
+#root textarea:focus {
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15) !important;
 }
 
 #root label {
-  font-size: clamp(0.98rem, 0.92rem + 0.25vw, 1.08rem) !important;
+  font-size: clamp(0.9rem, 0.86rem + 0.2vw, 1.02rem) !important;
   font-weight: 600 !important;
+  letter-spacing: 0.01em;
 }
+
+/* ── Micro-Card: 3D Tilt + Glow ── */
 
 #root .micro-card {
   position: relative;
   transform: translateY(0) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
   transform-style: preserve-3d;
   will-change: transform, box-shadow;
-  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 280ms ease,
-    border-color 280ms ease;
+  transition: transform 350ms var(--ease-out-expo), box-shadow 300ms var(--ease-smooth),
+    border-color 300ms ease;
 }
 
 #root .micro-card::before {
@@ -268,48 +347,97 @@ body {
   border-radius: inherit;
   pointer-events: none;
   background: radial-gradient(
-    360px 180px at var(--glow-x, 50%) var(--glow-y, 50%),
-    rgba(147, 197, 253, 0.17),
+    320px 160px at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(147, 197, 253, 0.12),
     transparent 72%
   );
   opacity: 0;
-  transition: opacity 260ms ease;
+  transition: opacity 280ms ease;
 }
 
 #root .micro-card:hover {
-  transform: translateY(-6px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
-  box-shadow: 0 24px 46px rgba(2, 8, 23, 0.3);
-  border-color: rgba(191, 219, 254, 0.45) !important;
+  transform: translateY(-5px) rotateX(var(--tilt-y, 0deg)) rotateY(var(--tilt-x, 0deg));
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: rgba(148, 163, 184, 0.25) !important;
 }
 
 #root .micro-card:hover::before {
   opacity: 1;
 }
 
+/* ── Image Treatment ── */
+
+#root section img {
+  border-radius: var(--brand-radius-card);
+  transition: transform 600ms var(--ease-out-expo), box-shadow 400ms ease;
+}
+
+#root section img:hover {
+  transform: scale(1.03);
+}
+
+/* ── Section Divider (subtle top-edge glow) ── */
+
+#root > div > section + section {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── AOS ── */
+
 [data-aos] {
   will-change: transform, opacity;
 }
 
+/* ── Parallax Opacity ── */
+
 .parallax-enabled section.parallax-section::before {
-  opacity: 0.08;
+  opacity: 0.06;
 }
 
 .parallax-enabled section.parallax-section::after {
-  opacity: 0.13;
+  opacity: 0.10;
 }
+
+/* ── Scrollbar Styling ── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+/* ── Responsive ── */
 
 @media (max-width: 900px) {
   :root {
-    --brand-space-section: clamp(3.2rem, 7vw, 5rem);
+    --brand-space-section: clamp(3.5rem, 7vw, 5.5rem);
+    --brand-space-inner: clamp(1rem, 4vw, 1.5rem);
   }
 
   #root .grid {
-    gap: 0.95rem !important;
+    gap: 0.875rem !important;
   }
 
   #root > div > section > div {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --brand-space-section: clamp(2.5rem, 6vw, 4rem);
   }
 }
 

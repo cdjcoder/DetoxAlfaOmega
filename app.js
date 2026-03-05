@@ -148,35 +148,35 @@ const DATA = {
 
   results: {
     en: [
-      { img: "https://sspark.genspark.ai/cfimages?u1=Q74dIwJUXKJ6WWLstnCV9X8T93Gu4cDsfuqC8GSH1OrdBAfMi8QhCRXVN6m94B%2FqXkxwciJRzFjZw%2Bce1zG0vMAtifpk8HfIH3hgQrDoWCDsfQd3TMtnWdFkpqJdNlNdZtdLQ%2B8%3D&u2=UShZlOehUfDtMSMF&width=2560", alt: "Clearer skin", t: "Clearer, More Radiant Skin", d: "As the liver and kidneys begin clearing what was exiting through your pores." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=Rur7pa4hbwi5IlZjV2GSY%2Bk3DveDNsCB405L4%2BltYQlsNFu%2B5a0XAf3UL53ZO1T5%2F3R5mvujSOQy8IPqOxqZ6ZnajgUG1D52duxohY1PGa%2F1E%2BFtDsDDv%2FZ2c25kv5TIfz1vJmn3runOAW18yuRf4LY4obRfhjn4z00W9PgufK2G&u2=VpTjmg3UczcGaTIC&width=2560", alt: "Natural energy", t: "Return of Natural Energy", d: "Clean, sustained vitality — not the stimulant kind. The kind that comes from a body running efficiently." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=dx2sKPogxdwPa2dTJ9RhhFXO8YUwBKZIMYnEFTtZmtiDfZsH5CjU3gjwVgGwfirzcrEpRTzkogxVs%2FZN9pJKNe4mQIe1Yym3Xog8EynPezaE8J47UsdfMrCBerFwzk6aAEwE&u2=1A10rRACIalFEvLv&width=2560", alt: "Mental clarity", t: "Mental Clarity & Focus", d: "Brain fog lifts when the internal chemical load lightens and inflammation subsides." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=ELmypnZ18c10C9huFPOeiS5p69b0Kw5ffVY8rLoKZ5AVeLMIfs%2B3yYINXbZ%2Fnsw9u2iWjMjxxOmgdEnB8%2Be990PR1kfOYQifnNuzQYl398fbb3U0B2Dv&u2=CgTdGcng1jZWbzaf&width=2560", alt: "Less bloated", t: "Lighter, Less Bloated", d: "As bile flow improves, digestion becomes more comfortable and efficient." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=L8voYUq%2FggGIy%2BlE5pvbnycp5jyTam5Fhxz6hWsdGZ%2BEOYBhCylChhanMoSg2eRnP8zR%2B%2BZcTwzdiORUR2drQiBd6a6MoAcDCLNn6h%2ByFVZmQ1Vk4iJTW9i39ek%2BvYIUpeNxSzuI3Ks9WDDD%2FPis9Fg0JqGkKFHrQShTcn0rJ5eLBJOm32KoW53DUpmAdMgl3znxfWRCQV4bfYMgADWBMuTOWjVP4kf37kebziza3shNcqsJ8mtMEyLlVtq%2FCQ%3D%3D&u2=WXUbXbf6o2pFI9vl&width=2560", alt: "Reduced puffiness", t: "Reduced Puffiness", d: "Kidneys clearing waste more efficiently — visible in your face and ankles." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=G4CHmuBIKBmYV0ZykyXQbtkLJAGo9a76U1%2FRhm2hY%2FKYR1x%2BzY0WNkl0rPPo1OQvQmOYv6VROEOZFxq%2F83q2h3vSlMYA4bIw9UxuoJas2BsUxw%3D%3D&u2=9xZDW0W3kx3HiYnD&width=2560", alt: "Better sleep", t: "Better Quality Sleep", d: "A calmer, less toxic internal environment supports deeper, more restorative rest." }
+      { img: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80&auto=format&fit=crop", alt: "Clearer skin", t: "Clearer, More Radiant Skin", d: "As the liver and kidneys begin clearing what was exiting through your pores." },
+      { img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop", alt: "Natural energy", t: "Return of Natural Energy", d: "Clean, sustained vitality — not the stimulant kind. The kind that comes from a body running efficiently." },
+      { img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop", alt: "Mental clarity", t: "Mental Clarity & Focus", d: "Brain fog lifts when the internal chemical load lightens and inflammation subsides." },
+      { img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop", alt: "Less bloated", t: "Lighter, Less Bloated", d: "As bile flow improves, digestion becomes more comfortable and efficient." },
+      { img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop", alt: "Reduced puffiness", t: "Reduced Puffiness", d: "Kidneys clearing waste more efficiently — visible in your face and ankles." },
+      { img: "https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop", alt: "Better sleep", t: "Better Quality Sleep", d: "A calmer, less toxic internal environment supports deeper, more restorative rest." }
     ],
     es: [
-      { img: "https://sspark.genspark.ai/cfimages?u1=Q74dIwJUXKJ6WWLstnCV9X8T93Gu4cDsfuqC8GSH1OrdBAfMi8QhCRXVN6m94B%2FqXkxwciJRzFjZw%2Bce1zG0vMAtifpk8HfIH3hgQrDoWCDsfQd3TMtnWdFkpqJdNlNdZtdLQ%2B8%3D&u2=UShZlOehUfDtMSMF&width=2560", alt: "Piel más clara", t: "Piel Más Clara y Radiante", d: "A medida que el hígado y los riñones comienzan a eliminar lo que salía por tus poros." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=Rur7pa4hbwi5IlZjV2GSY%2Bk3DveDNsCB405L4%2BltYQlsNFu%2B5a0XAf3UL53ZO1T5%2F3R5mvujSOQy8IPqOxqZ6ZnajgUG1D52duxohY1PGa%2F1E%2BFtDsDDv%2FZ2c25kv5TIfz1vJmn3runOAW18yuRf4LY4obRfhjn4z00W9PgufK2G&u2=VpTjmg3UczcGaTIC&width=2560", alt: "Energía natural", t: "Retorno de la Energía Natural", d: "Vitalidad limpia y sostenida — no el tipo de estimulante. El tipo que proviene de un cuerpo que funciona eficientemente." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=dx2sKPogxdwPa2dTJ9RhhFXO8YUwBKZIMYnEFTtZmtiDfZsH5CjU3gjwVgGwfirzcrEpRTzkogxVs%2FZN9pJKNe4mQIe1Yym3Xog8EynPezaE8J47UsdfMrCBerFwzk6aAEwE&u2=1A10rRACIalFEvLv&width=2560", alt: "Claridad mental", t: "Claridad Mental y Enfoque", d: "La niebla mental se levanta cuando la carga química interna se aligera y la inflamación disminuye." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=ELmypnZ18c10C9huFPOeiS5p69b0Kw5ffVY8rLoKZ5AVeLMIfs%2B3yYINXbZ%2Fnsw9u2iWjMjxxOmgdEnB8%2Be990PR1kfOYQifnNuzQYl398fbb3U0B2Dv&u2=CgTdGcng1jZWbzaf&width=2560", alt: "Menos hinchado", t: "Más Ligero, Menos Hinchado", d: "A medida que mejora el flujo de bilis, la digestión se vuelve más cómoda y eficiente." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=L8voYUq%2FggGIy%2BlE5pvbnycp5jyTam5Fhxz6hWsdGZ%2BEOYBhCylChhanMoSg2eRnP8zR%2B%2BZcTwzdiORUR2drQiBd6a6MoAcDCLNn6h%2ByFVZmQ1Vk4iJTW9i39ek%2BvYIUpeNxSzuI3Ks9WDDD%2FPis9Fg0JqGkKFHrQShTcn0rJ5eLBJOm32KoW53DUpmAdMgl3znxfWRCQV4bfYMgADWBMuTOWjVP4kf37kebziza3shNcqsJ8mtMEyLlVtq%2FCQ%3D%3D&u2=WXUbXbf6o2pFI9vl&width=2560", alt: "Menos hinchazón", t: "Reducción de la Hinchazón", d: "Los riñones eliminan los residuos más eficientemente — visible en tu cara y tobillos." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=G4CHmuBIKBmYV0ZykyXQbtkLJAGo9a76U1%2FRhm2hY%2FKYR1x%2BzY0WNkl0rPPo1OQvQmOYv6VROEOZFxq%2F83q2h3vSlMYA4bIw9UxuoJas2BsUxw%3D%3D&u2=9xZDW0W3kx3HiYnD&width=2560", alt: "Mejor sueño", t: "Mejor Calidad de Sueño", d: "Un ambiente interno más tranquilo y menos tóxico apoya un descanso más profundo y restaurador." }
+      { img: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80&auto=format&fit=crop", alt: "Piel más clara", t: "Piel Más Clara y Radiante", d: "A medida que el hígado y los riñones comienzan a eliminar lo que salía por tus poros." },
+      { img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop", alt: "Energía natural", t: "Retorno de la Energía Natural", d: "Vitalidad limpia y sostenida — no el tipo de estimulante. El tipo que proviene de un cuerpo que funciona eficientemente." },
+      { img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop", alt: "Claridad mental", t: "Claridad Mental y Enfoque", d: "La niebla mental se levanta cuando la carga química interna se aligera y la inflamación disminuye." },
+      { img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop", alt: "Menos hinchado", t: "Más Ligero, Menos Hinchado", d: "A medida que mejora el flujo de bilis, la digestión se vuelve más cómoda y eficiente." },
+      { img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&auto=format&fit=crop", alt: "Menos hinchazón", t: "Reducción de la Hinchazón", d: "Los riñones eliminan los residuos más eficientemente — visible en tu cara y tobillos." },
+      { img: "https://images.unsplash.com/photo-1531353826977-0941b4779a1c?w=800&q=80&auto=format&fit=crop", alt: "Mejor sueño", t: "Mejor Calidad de Sueño", d: "Un ambiente interno más tranquilo y menos tóxico apoya un descanso más profundo y restaurador." }
     ]
   },
 
   lifestyle: {
     en: [
-      { img: "https://sspark.genspark.ai/cfimages?u1=ICdtqU52M68%2FtzC7tsMcH6n%2BooHK4RABntDsH2VUburz%2BqMW4OJ3R4LDDikyHjQJ6E3kjMnfsK6bmKvXtMeEvMKPCArQXgQvlvNSZMc64AuXfQ%3D%3D&u2=GwNFAa4w3zNeSBAs&width=2560", alt: "Drink water", t: "Drink Plenty of Filtered Water", d: "Hydration is essential — your kidneys cannot flush waste without adequate fluid." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=LwvrPKZ1z32dINq4JsxV%2FYY%2BdaB1iFX0i7aiEVFhUCvR3cEV78Bmei7gTtXr5vYhaYn4Pk%2B0Oipreq%2FcEqCoHyLf8%2Bqx%2FKB5QIVKZxCRxFEmcXNukNaIFixIs5HgRTP0DAWPsmOzV5aQXaGh8NFXaM9uXikGrappPbGP9g4uxNkGXtyl7KQIE5d1vRHzl%2FzaWU1CACaO1ECmVdSvRmT5S2e6Eay%2Bh%2FXdzWVjOhnKtWPUeMOJcZpF253ORYVUb84%3D&u2=T7aD5lO6Ujggscf7&width=2560", alt: "Plant meals", t: "Eat Light, Plant-Forward Meals", d: "Reduce the liver's processing load. Whole foods only during the protocol window." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=p20QeiHj9ckuswdMLE6UNdQqdUjqUxwoAiVHw4QFXLMqipmlqeSDel4moehBMucTZTOtFwKj259grJfE7lGXOPPHWHl6nP92NGUcKpe4ksS400XmukMM0dXp2%2FIrMD%2FxNuVDcs1qCcpBCDSJnYfsbGLA%2FSfTb61%2FUPhdPuRkugr%2BHlC2j1W8U7bJZ4oY0vp5rsXaR1SHM7ECzGj6x9S8qLIiDPgUrTUDmS%2B63MU1VFhJOj5Z2qu5y9MLfE%2BP9N2XVizeO98hcQwBXAzSHkwhKdqcNUQuDF2K9Uvt&u2=rbp9csEm%2Fyq7uHTK&width=2560", alt: "Minimize alcohol", t: "Eliminate Alcohol Completely", d: "Let your liver focus entirely on what it's been carrying. No exceptions." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=VM4pocXeNhEc10nOKfW2VFQwTE67FEX%2F1XUCMQBJK1Ln5%2BlDbR4Ck1EbYXMdp%2BLFnW4tWEERtTaGhAi3NEs9I2OGO%2BkjZ%2B5ki2D%2BZLYKslAoeA%3D%3D&u2=z4Rkb71Gb9UHIL78&width=2560", alt: "Prioritize rest", t: "Prioritise Sleep", d: "The liver performs its deepest detoxification work between 1–3am while you sleep." }
+      { img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80&auto=format&fit=crop", alt: "Drink water", t: "Drink Plenty of Filtered Water", d: "Hydration is essential — your kidneys cannot flush waste without adequate fluid." },
+      { img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop", alt: "Plant meals", t: "Eat Light, Plant-Forward Meals", d: "Reduce the liver's processing load. Whole foods only during the protocol window." },
+      { img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&q=80&auto=format&fit=crop", alt: "No alcohol", t: "Eliminate Alcohol Completely", d: "Let your liver focus entirely on what it's been carrying. No exceptions." },
+      { img: "https://images.unsplash.com/photo-1495197359483-d092478c170a?w=600&q=80&auto=format&fit=crop", alt: "Prioritize rest", t: "Prioritise Sleep", d: "The liver performs its deepest detoxification work between 1–3am while you sleep." }
     ],
     es: [
-      { img: "https://sspark.genspark.ai/cfimages?u1=ICdtqU52M68%2FtzC7tsMcH6n%2BooHK4RABntDsH2VUburz%2BqMW4OJ3R4LDDikyHjQJ6E3kjMnfsK6bmKvXtMeEvMKPCArQXgQvlvNSZMc64AuXfQ%3D%3D&u2=GwNFAa4w3zNeSBAs&width=2560", alt: "Bebe agua", t: "Bebe Mucha Agua Filtrada", d: "La hidratación es esencial — tus riñones no pueden eliminar desechos sin líquido adecuado." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=LwvrPKZ1z32dINq4JsxV%2FYY%2BdaB1iFX0i7aiEVFhUCvR3cEV78Bmei7gTtXr5vYhaYn4Pk%2B0Oipreq%2FcEqCoHyLf8%2Bqx%2FKB5QIVKZxCRxFEmcXNukNaIFixIs5HgRTP0DAWPsmOzV5aQXaGh8NFXaM9uXikGrappPbGP9g4uxNkGXtyl7KQIE5d1vRHzl%2FzaWU1CACaO1ECmVdSvRmT5S2e6Eay%2Bh%2FXdzWVjOhnKtWPUeMOJcZpF253ORYVUb84%3D&u2=T7aD5lO6Ujggscf7&width=2560", alt: "Comidas vegetales", t: "Come Comidas Ligeras y Vegetales", d: "Reduce la carga de procesamiento del hígado. Solo alimentos integrales durante el protocolo." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=p20QeiHj9ckuswdMLE6UNdQqdUjqUxwoAiVHw4QFXLMqipmlqeSDel4moehBMucTZTOtFwKj259grJfE7lGXOPPHWHl6nP92NGUcKpe4ksS400XmukMM0dXp2%2FIrMD%2FxNuVDcs1qCcpBCDSJnYfsbGLA%2FSfTb61%2FUPhdPuRkugr%2BHlC2j1W8U7bJZ4oY0vp5rsXaR1SHM7ECzGj6x9S8qLIiDPgUrTUDmS%2B63MU1VFhJOj5Z2qu5y9MLfE%2BP9N2XVizeO98hcQwBXAzSHkwhKdqcNUQuDF2K9Uvt&u2=rbp9csEm%2Fyq7uHTK&width=2560", alt: "Minimiza alcohol", t: "Elimina el Alcohol Completamente", d: "Deja que tu hígado se enfoque completamente en lo que ha estado cargando. Sin excepciones." },
-      { img: "https://sspark.genspark.ai/cfimages?u1=VM4pocXeNhEc10nOKfW2VFQwTE67FEX%2F1XUCMQBJK1Ln5%2BlDbR4Ck1EbYXMdp%2BLFnW4tWEERtTaGhAi3NEs9I2OGO%2BkjZ%2B5ki2D%2BZLYKslAoeA%3D%3D&u2=z4Rkb71Gb9UHIL78&width=2560", alt: "Prioriza el descanso", t: "Prioriza el Sueño", d: "El hígado realiza su trabajo de desintoxicación más profundo entre la 1–3am mientras duermes." }
+      { img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80&auto=format&fit=crop", alt: "Bebe agua", t: "Bebe Mucha Agua Filtrada", d: "La hidratación es esencial — tus riñones no pueden eliminar desechos sin líquido adecuado." },
+      { img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop", alt: "Comidas vegetales", t: "Come Comidas Ligeras y Vegetales", d: "Reduce la carga de procesamiento del hígado. Solo alimentos integrales durante el protocolo." },
+      { img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&q=80&auto=format&fit=crop", alt: "Sin alcohol", t: "Elimina el Alcohol Completamente", d: "Deja que tu hígado se enfoque completamente en lo que ha estado cargando. Sin excepciones." },
+      { img: "https://images.unsplash.com/photo-1495197359483-d092478c170a?w=600&q=80&auto=format&fit=crop", alt: "Prioriza el descanso", t: "Prioriza el Sueño", d: "El hígado realiza su trabajo de desintoxicación más profundo entre la 1–3am mientras duermes." }
     ]
   },
 
@@ -247,13 +247,12 @@ function renderDisparity() {
   const items = DATA.disparity[lang];
   container.innerHTML = items.map((item, i) => `
     <div data-aos="fade-up" data-aos-delay="${i * 100}">
-      <div class="glass-card p-7 text-center h-full">
+      <div class="glass-card p-7 text-center h-full" style="border-radius:20px;border:1px solid rgba(148,163,184,0.12);background:rgba(15,23,42,0.5);backdrop-filter:blur(14px);transition:transform 350ms cubic-bezier(0.16,1,0.3,1),box-shadow 300ms ease,border-color 300ms ease;">
         <div style="font-family:'Lexend Deca',sans-serif;font-size:3.25rem;font-weight:900;letter-spacing:-0.04em;line-height:1;" class="text-red-400 mb-4">${item.stat}</div>
-        <p class="body-sm text-slate-400 leading-6">${item.desc}</p>
+        <p class="body-sm text-slate-400" style="line-height:1.7;">${item.desc}</p>
       </div>
     </div>
   `).join('');
-  // Re-init AOS for newly added elements
   if (typeof AOS !== 'undefined') AOS.refresh();
 }
 
@@ -261,9 +260,9 @@ function renderPipeline() {
   const container = document.getElementById('pipelineSteps');
   const items = DATA.pipeline[lang];
   container.innerHTML = items.map((step, i) => `
-    <div class="pipeline-step">
-      <div class="pipeline-num">${i + 1}</div>
-      <p class="body-sm text-slate-500 leading-tight" style="font-size:0.7rem;">${step}</p>
+    <div class="pipeline-step" style="border-radius:14px;border:1px solid rgba(148,163,184,0.1);background:rgba(15,23,42,0.45);backdrop-filter:blur(8px);padding:0.75rem 0.6rem;text-align:center;transition:transform 300ms cubic-bezier(0.16,1,0.3,1);">
+      <div class="pipeline-num" style="width:1.5rem;height:1.5rem;border-radius:50%;background:linear-gradient(180deg,#ef4444,#dc2626);color:#fff;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 0.4rem;">${i + 1}</div>
+      <p class="body-sm text-slate-400" style="font-size:0.7rem;line-height:1.4;">${step}</p>
     </div>
   `).join('');
 }
@@ -323,17 +322,17 @@ function renderResults() {
   const items = DATA.results[lang];
   container.innerHTML = items.map((item, i) => `
     <div data-aos="fade-up" data-aos-delay="${i * 80}">
-      <div class="glass-card-amber overflow-hidden">
-        <div class="w-full overflow-hidden" style="height:176px;">
-          <img src="${item.img}" alt="${item.alt}"
-               class="w-full h-full object-cover transition-transform duration-700"
-               style="transition: transform 0.7s ease;"
-               onmouseover="this.style.transform='scale(1.07)'"
+      <div class="glass-card-amber overflow-hidden" style="border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:rgba(30,20,8,0.55);backdrop-filter:blur(12px);transition:transform 350ms cubic-bezier(0.16,1,0.3,1),box-shadow 300ms ease;">
+        <div class="w-full overflow-hidden" style="height:192px;">
+          <img src="${item.img}" alt="${item.alt}" loading="lazy"
+               class="w-full h-full object-cover"
+               style="transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);"
+               onmouseover="this.style.transform='scale(1.06)'"
                onmouseout="this.style.transform='scale(1)'" />
         </div>
         <div class="p-6">
-          <h3 style="font-family:'Lexend Deca',sans-serif;" class="font-bold text-white text-lg mb-2 drop-shadow">${item.t}</h3>
-          <p class="body-sm text-amber-100/80 leading-6">${item.d}</p>
+          <h3 style="font-family:'Lexend Deca',sans-serif;letter-spacing:-0.02em;" class="font-bold text-white text-lg mb-2">${item.t}</h3>
+          <p class="body-sm text-amber-100/80 leading-6" style="line-height:1.7;">${item.d}</p>
         </div>
       </div>
     </div>
@@ -345,11 +344,17 @@ function renderLifestyle() {
   const container = document.getElementById('lifestyleCards');
   const items = DATA.lifestyle[lang];
   container.innerHTML = items.map((item, i) => `
-    <div class="lifestyle-card" data-aos="fade-up" data-aos-delay="${i * 80}">
-      <img src="${item.img}" alt="${item.alt}" />
+    <div class="lifestyle-card" data-aos="fade-up" data-aos-delay="${i * 80}"
+         style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);background:rgba(30,20,8,0.5);backdrop-filter:blur(10px);transition:transform 350ms cubic-bezier(0.16,1,0.3,1),box-shadow 300ms ease;">
+      <div style="height:160px;overflow:hidden;">
+        <img src="${item.img}" alt="${item.alt}" loading="lazy"
+             style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);"
+             onmouseover="this.style.transform='scale(1.06)'"
+             onmouseout="this.style.transform='scale(1)'" />
+      </div>
       <div class="px-5 py-4">
-        <p style="font-family:'Lexend Deca',sans-serif;" class="font-bold text-white text-sm mb-1.5 drop-shadow">${item.t}</p>
-        <p class="body-sm text-amber-100/80 leading-6">${item.d}</p>
+        <p style="font-family:'Lexend Deca',sans-serif;letter-spacing:-0.01em;" class="font-bold text-white text-sm mb-1.5">${item.t}</p>
+        <p class="body-sm text-amber-100/80" style="line-height:1.7;">${item.d}</p>
       </div>
     </div>
   `).join('');
