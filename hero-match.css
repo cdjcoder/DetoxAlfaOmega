@@ -1,4 +1,4 @@
-/* ── Hero section: junk-food background ── */
+/* ── Hero section: junk-food background + readability ── */
 
 #root > div > section:first-of-type {
   position: relative;
@@ -14,115 +14,156 @@
   display: none !important;
 }
 
-/* Overlay: semi-transparent black only */
+/* ── Overlay: dark gradient (set via inline style in JS) ── */
 #root > div > section:first-of-type > .absolute.inset-0 {
   z-index: 0 !important;
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Content stays on top */
+/* ── Glass content panel ── */
 #root > div > section:first-of-type > .relative.z-10 {
   position: relative;
   z-index: 20 !important;
   text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(10, 12, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Badge */
+/* ── Badge ── */
 #root > div > section:first-of-type .inline-flex.items-center.gap-2 {
   border-radius: 9999px;
-  background: rgba(127, 29, 29, 0.52) !important;
-  border: 1px solid rgba(251, 113, 133, 0.34) !important;
+  background: rgba(127, 29, 29, 0.65) !important;
+  border: 1px solid rgba(251, 113, 133, 0.40) !important;
   color: #fecdd3 !important;
-  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* Heading */
+/* ── Heading ── */
 #root > div > section:first-of-type h1 {
   font-size: clamp(3.1rem, 2.4rem + 2.85vw, 5.95rem) !important;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  color: #f8fafc;
-  text-shadow: 0 14px 34px rgba(2, 6, 23, 0.65);
+  color: #ffffff !important;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55), 0 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.03em;
-  line-height: 1.02 !important;
+  line-height: 1.05 !important;
 }
 
 #root > div > section:first-of-type h1 span {
   color: #ff6f80 !important;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.55), 0 0 40px rgba(255, 111, 128, 0.25);
 }
 
-/* Subtitle / body text */
+/* ── Subtitle / body text ── */
 #root > div > section:first-of-type p.text-xl,
-#root > div > section:first-of-type p.text-lg {
-  color: rgba(241, 245, 249, 0.95) !important;
-  text-shadow: 0 6px 16px rgba(2, 6, 23, 0.5);
+#root > div > section:first-of-type p.text-2xl,
+#root > div > section:first-of-type p[class*="text-xl"],
+#root > div > section:first-of-type p[class*="text-2xl"] {
+  color: rgba(255, 255, 255, 0.88) !important;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
 }
 
-#root > div > section:first-of-type p.text-xl {
+#root > div > section:first-of-type p.text-xl,
+#root > div > section:first-of-type p[class*="text-xl"] {
   font-size: clamp(1.08rem, 1rem + 0.45vw, 1.35rem) !important;
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#root > div > section:first-of-type p.text-lg {
+#root > div > section:first-of-type p.text-lg,
+#root > div > section:first-of-type p[class*="text-lg"] {
+  color: rgba(241, 245, 249, 0.85) !important;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   font-size: clamp(0.96rem, 0.9rem + 0.22vw, 1.08rem) !important;
 }
 
-/* CTA buttons */
+/* ── CTA buttons ── */
 #root > div > section:first-of-type a[href="#truth"] {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border-color: rgba(255, 255, 255, 0.38) !important;
-  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.30) !important;
+  color: #ffffff !important;
   backdrop-filter: blur(4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  font-weight: 600;
+}
+
+#root > div > section:first-of-type a[href="#truth"]:hover {
+  background: rgba(255, 255, 255, 0.28) !important;
 }
 
 #root > div > section:first-of-type a[href="#order"] {
   background: linear-gradient(180deg, #ff586f 0%, #e7425b 100%) !important;
-  border: 1px solid rgba(255, 162, 176, 0.4);
-  color: #fff;
-  box-shadow: 0 18px 36px rgba(127, 29, 29, 0.42);
+  border: 1px solid rgba(255, 162, 176, 0.45) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 32px rgba(180, 30, 50, 0.50), 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-weight: 800;
+}
+
+#root > div > section:first-of-type a[href="#order"]:hover {
+  background: linear-gradient(180deg, #ff6b7f 0%, #f04e65 100%) !important;
+  box-shadow: 0 16px 40px rgba(180, 30, 50, 0.60), 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 #root > div > section:first-of-type a[href="#truth"],
 #root > div > section:first-of-type a[href="#order"] {
   padding: 0.9rem 1.78rem !important;
   border-radius: 14px !important;
+  transition: all 0.2s ease;
 }
 
-/* Stats grid */
+/* ── Stats grid ── */
 #root > div > section:first-of-type .grid.grid-cols-3 {
-  border-color: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #root > div > section:first-of-type .grid.grid-cols-3 > div {
-  background: rgba(7, 18, 52, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 12, 20, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 12px 10px;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
 }
 
 #root > div > section:first-of-type .grid.grid-cols-3 > div > div:first-child {
   color: #ff7386 !important;
   font-size: clamp(2rem, 1.75rem + 1.1vw, 2.9rem) !important;
   line-height: 1 !important;
+  text-shadow: 0 0 20px rgba(255, 115, 134, 0.3);
 }
 
-/* Parallax overrides */
+#root > div > section:first-of-type .grid.grid-cols-3 > div > div:last-child {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ── Parallax overrides ── */
 .parallax-enabled #root > div > section:first-of-type.parallax-section::before,
 .parallax-enabled #root > div > section:first-of-type.parallax-section::after {
   display: none !important;
 }
 
+/* ── Responsive ── */
 @media (max-width: 900px) {
   #root > div > section:first-of-type {
     min-height: 65vh !important;
+  }
+
+  #root > div > section:first-of-type > .relative.z-10 {
+    padding: 28px 20px;
+    margin: 16px;
+    border-radius: 20px;
   }
 
   #root > div > section:first-of-type h1 {
@@ -131,5 +172,13 @@
 
   #root > div > section:first-of-type .grid.grid-cols-3 > div {
     padding: 10px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  #root > div > section:first-of-type > .relative.z-10 {
+    padding: 24px 16px;
+    margin: 12px;
+    border-radius: 18px;
   }
 }
