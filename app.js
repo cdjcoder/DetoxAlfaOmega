@@ -433,10 +433,12 @@ function handleScroll() {
 
   // Navbar — toggle .scrolled class
   const nav = document.getElementById('mainNav');
-  if (scrollY > 40) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
+  if (nav) {
+    if (scrollY > 40) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
   }
 
   // Back to top button
