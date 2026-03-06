@@ -425,6 +425,56 @@ body {
   background: rgba(148, 163, 184, 0.35);
 }
 
+/* ── Call Button: Wiggle + Glimmer ── */
+
+.call-btn-wiggle {
+  animation: callWiggle 2.8s ease-in-out infinite;
+}
+
+.call-btn-wiggle::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(255, 255, 255, 0.45) 48%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.45) 52%,
+    transparent 62%
+  );
+  animation: callGlimmer 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes callWiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  8%       { transform: rotate(-6deg) scale(1.08); }
+  16%      { transform: rotate(6deg) scale(1.08); }
+  24%      { transform: rotate(-4deg) scale(1.05); }
+  32%      { transform: rotate(4deg) scale(1.05); }
+  40%      { transform: rotate(-1deg) scale(1.02); }
+  48%      { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes callGlimmer {
+  0%, 100% { left: -75%; opacity: 0; }
+  15%      { opacity: 0; }
+  40%      { opacity: 1; }
+  60%      { left: 125%; opacity: 1; }
+  75%      { opacity: 0; }
+}
+
+.call-btn-wiggle:hover {
+  animation: none;
+  transform: scale(1.08);
+  box-shadow: 0 0 24px rgba(22, 163, 74, 0.55), 0 6px 16px rgba(0, 0, 0, 0.25) !important;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
 /* ── Responsive ── */
 
 @media (max-width: 900px) {
