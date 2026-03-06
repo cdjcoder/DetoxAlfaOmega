@@ -155,20 +155,26 @@
   display: none !important;
 }
 
-/* ── Responsive ── */
+/* ── Responsive — Tablet ── */
 @media (max-width: 900px) {
   #root > div > section:first-of-type {
-    min-height: 65vh !important;
+    min-height: 60vh !important;
   }
 
   #root > div > section:first-of-type > .relative.z-10 {
-    padding: 28px 20px;
-    margin: 16px;
+    padding: 24px 18px;
+    margin: 14px;
     border-radius: 20px;
+    max-width: 100%;
   }
 
   #root > div > section:first-of-type h1 {
-    font-size: clamp(2.3rem, 1.82rem + 3.6vw, 3.6rem) !important;
+    font-size: clamp(2rem, 1.6rem + 2.8vw, 3.2rem) !important;
+  }
+
+  #root > div > section:first-of-type p.text-xl,
+  #root > div > section:first-of-type p[class*="text-xl"] {
+    font-size: 1rem !important;
   }
 
   #root > div > section:first-of-type .grid.grid-cols-3 > div {
@@ -176,10 +182,80 @@
   }
 }
 
-@media (max-width: 480px) {
+/* ── Responsive — Mobile ── */
+@media (max-width: 640px) {
+  #root > div > section:first-of-type {
+    min-height: auto !important;
+    padding-top: 5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
   #root > div > section:first-of-type > .relative.z-10 {
-    padding: 24px 16px;
-    margin: 12px;
-    border-radius: 18px;
+    padding: 20px 14px;
+    margin: 8px;
+    border-radius: 16px;
+  }
+
+  #root > div > section:first-of-type h1 {
+    font-size: clamp(1.6rem, 1.3rem + 2vw, 2.4rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  #root > div > section:first-of-type h1 span {
+    display: inline !important;
+  }
+
+  #root > div > section:first-of-type p.text-xl,
+  #root > div > section:first-of-type p[class*="text-xl"],
+  #root > div > section:first-of-type p[class*="text-2xl"] {
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+  }
+
+  #root > div > section:first-of-type p.text-lg,
+  #root > div > section:first-of-type p[class*="text-lg"] {
+    font-size: 0.85rem !important;
+  }
+
+  #root > div > section:first-of-type a[href="#truth"],
+  #root > div > section:first-of-type a[href="#order"] {
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    border-radius: 12px !important;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #root > div > section:first-of-type .grid.grid-cols-3 {
+    gap: 0.35rem !important;
+    margin-top: 2rem !important;
+    padding-top: 1.5rem !important;
+  }
+
+  #root > div > section:first-of-type .grid.grid-cols-3 > div {
+    padding: 8px 4px !important;
+    border-radius: 10px !important;
+  }
+
+  #root > div > section:first-of-type .grid.grid-cols-3 > div > div:first-child {
+    font-size: 1.4rem !important;
+  }
+
+  #root > div > section:first-of-type .inline-flex.items-center.gap-2 {
+    font-size: 0.65rem !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+}
+
+/* ── Responsive — Small phones ── */
+@media (max-width: 400px) {
+  #root > div > section:first-of-type > .relative.z-10 {
+    padding: 16px 10px;
+    margin: 6px;
+  }
+
+  #root > div > section:first-of-type h1 {
+    font-size: 1.4rem !important;
   }
 }

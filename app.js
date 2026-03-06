@@ -323,7 +323,7 @@ function renderResults() {
   container.innerHTML = items.map((item, i) => `
     <div data-aos="fade-up" data-aos-delay="${i * 80}">
       <div class="glass-card-amber overflow-hidden" style="border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:rgba(30,20,8,0.55);backdrop-filter:blur(12px);transition:transform 350ms cubic-bezier(0.16,1,0.3,1),box-shadow 300ms ease;">
-        <div class="w-full overflow-hidden" style="height:192px;">
+        <div class="w-full overflow-hidden" style="height:clamp(140px, 22vw, 192px);">
           <img src="${item.img}" alt="${item.alt}" loading="lazy"
                class="w-full h-full object-cover"
                style="transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);"
@@ -346,7 +346,7 @@ function renderLifestyle() {
   container.innerHTML = items.map((item, i) => `
     <div class="lifestyle-card" data-aos="fade-up" data-aos-delay="${i * 80}"
          style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);background:rgba(30,20,8,0.5);backdrop-filter:blur(10px);transition:transform 350ms cubic-bezier(0.16,1,0.3,1),box-shadow 300ms ease;">
-      <div style="height:160px;overflow:hidden;">
+      <div style="height:clamp(120px, 20vw, 160px);overflow:hidden;">
         <img src="${item.img}" alt="${item.alt}" loading="lazy"
              style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);"
              onmouseover="this.style.transform='scale(1.06)'"

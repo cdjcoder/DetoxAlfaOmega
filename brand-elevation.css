@@ -482,12 +482,14 @@ body {
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-/* ── Responsive ── */
+/* ══════════════════════════════════════
+   RESPONSIVE — Tablet (≤900px)
+   ══════════════════════════════════════ */
 
 @media (max-width: 900px) {
   :root {
-    --brand-space-section: clamp(3.5rem, 7vw, 5.5rem);
-    --brand-space-inner: clamp(1rem, 4vw, 1.5rem);
+    --brand-space-section: clamp(3rem, 6vw, 5rem);
+    --brand-space-inner: clamp(0.875rem, 3.5vw, 1.25rem);
   }
 
   #root .grid {
@@ -498,11 +500,199 @@ body {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
+
+  #root .max-w-7xl {
+    width: 96vw !important;
+  }
+
+  /* Nav: tighten spacing */
+  #root nav .max-w-6xl {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Tables: reduce padding for tablet */
+  #root table th,
+  #root table td {
+    padding: 0.75rem 0.85rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  #root table th {
+    font-size: 0.78rem !important;
+  }
+
+  /* Hero stats grid: stay 3 cols but tighter */
+  #root .grid.grid-cols-3 {
+    gap: 0.5rem !important;
+  }
+
+  /* Pipeline 5-col grid: go to 3 cols */
+  #root .grid.grid-cols-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
 }
 
-@media (max-width: 480px) {
+/* ══════════════════════════════════════
+   RESPONSIVE — Mobile (≤640px)
+   ══════════════════════════════════════ */
+
+@media (max-width: 640px) {
   :root {
     --brand-space-section: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  /* All containers: full-width with minimal padding */
+  #root .max-w-4xl,
+  #root .max-w-5xl,
+  #root .max-w-6xl,
+  #root .max-w-7xl {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #root > div > section > div {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Nav: stack-friendly */
+  .call-btn-wiggle {
+    font-size: 0.72rem !important;
+    padding: 0.4rem 0.65rem !important;
+  }
+
+  .call-btn-wiggle span:first-child {
+    font-size: 0.9rem !important;
+  }
+
+  /* Hero stats: stack to 1 col on very small, 3 cols otherwise */
+  #root .grid.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.4rem !important;
+  }
+
+  #root .grid.grid-cols-3 > div {
+    padding: 8px 4px !important;
+  }
+
+  /* Pipeline 5-col: go to 2 cols + wrap */
+  #root .grid.grid-cols-5 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Tables: scroll horizontally, reduce cell padding */
+  #root .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root table th,
+  #root table td {
+    padding: 0.6rem 0.65rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  #root table th {
+    font-size: 0.72rem !important;
+  }
+
+  /* Form: full width inputs */
+  #root .grid.grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Images: constrain height */
+  #root section img {
+    max-height: 240px;
+  }
+
+  /* JotForm iframe responsive */
+  #root iframe[id*="JotForm"] {
+    min-height: 600px !important;
+    height: auto !important;
+  }
+
+  /* Typography scale down slightly */
+  #root h1 {
+    font-size: clamp(1.8rem, 1.4rem + 2vw, 3rem) !important;
+  }
+
+  #root h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.6vw, 2.4rem) !important;
+  }
+
+  #root .text-xl,
+  #root .text-2xl {
+    font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.4rem) !important;
+  }
+
+  /* Buttons: full-width on mobile */
+  #root .flex.flex-col.sm\:flex-row {
+    flex-direction: column !important;
+  }
+
+  #root .flex.flex-col.sm\:flex-row > a,
+  #root .flex.flex-col.sm\:flex-row > button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Glass panel: tighter padding */
+  #root > div > section:first-of-type > .relative.z-10 {
+    padding: 20px 14px !important;
+    margin: 10px !important;
+    border-radius: 16px !important;
+  }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Small phones (≤400px)
+   ══════════════════════════════════════ */
+
+@media (max-width: 400px) {
+  :root {
+    --brand-space-section: 2rem;
+  }
+
+  #root > div > section > div {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  #root h1 {
+    font-size: clamp(1.5rem, 1.2rem + 1.8vw, 2.2rem) !important;
+  }
+
+  #root h2 {
+    font-size: clamp(1.3rem, 1.1rem + 1.2vw, 1.9rem) !important;
+  }
+
+  /* Tables: even tighter */
+  #root table th,
+  #root table td {
+    padding: 0.5rem 0.45rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Pipeline: single column */
+  #root .grid.grid-cols-5 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats: reduce size */
+  #root .grid.grid-cols-3 > div > div:first-child {
+    font-size: 1.5rem !important;
+  }
+
+  /* Nav call button: icon only */
+  .call-btn-wiggle {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0 !important;
+  }
+
+  .call-btn-wiggle span:first-child {
+    font-size: 1.1rem !important;
   }
 }
 

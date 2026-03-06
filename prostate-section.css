@@ -395,7 +395,7 @@
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* ── Responsive ── */
+/* ── Responsive — Tablet ── */
 
 @media (max-width: 900px) {
   .prostate-grid {
@@ -413,5 +413,133 @@
 
   .prostate-banner-img {
     height: 180px;
+  }
+
+  .prostate-table th,
+  .prostate-table td {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.88rem;
+  }
+
+  .prostate-table th {
+    font-size: 0.75rem;
+  }
+}
+
+/* ── Responsive — Mobile ── */
+
+@media (max-width: 640px) {
+  .prostate-wrap {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .prostate-title {
+    font-size: clamp(1.5rem, 1.2rem + 1.8vw, 2.4rem);
+  }
+
+  .prostate-lead {
+    font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.05rem);
+  }
+
+  .prostate-hero-img {
+    height: 200px;
+  }
+
+  .prostate-card-img {
+    height: 140px;
+  }
+
+  .prostate-card {
+    padding: 1.1rem 1rem;
+  }
+
+  .prostate-card h3 {
+    font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem);
+  }
+
+  .prostate-card p,
+  .prostate-copy p {
+    font-size: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  }
+
+  .prostate-list li {
+    font-size: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+    padding-left: 1.3rem;
+  }
+
+  .prostate-banner-img {
+    height: 150px;
+  }
+
+  .prostate-banner-label {
+    font-size: clamp(0.9rem, 0.82rem + 0.4vw, 1.15rem);
+  }
+
+  .prostate-banner-overlay {
+    padding: 1rem 1.25rem;
+  }
+
+  .prostate-table-wrap {
+    border-radius: 14px;
+  }
+
+  .prostate-table th,
+  .prostate-table td {
+    padding: 0.55rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .prostate-table th {
+    font-size: 0.68rem;
+  }
+
+  .prostate-cta {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .prostate-cta p {
+    font-size: 0.9rem;
+  }
+
+  .prostate-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .prostate-actions {
+    flex-direction: column;
+  }
+
+  .prostate-kicker {
+    font-size: 0.68rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .pk {
+    padding: 0 0.1em;
+  }
+}
+
+/* ── Responsive — Small phones ── */
+
+@media (max-width: 400px) {
+  .prostate-hero-img {
+    height: 160px;
+  }
+
+  .prostate-card-img {
+    height: 120px;
+  }
+
+  .prostate-banner-img {
+    height: 120px;
+  }
+
+  .prostate-title {
+    font-size: clamp(1.3rem, 1.1rem + 1.2vw, 1.8rem);
   }
 }
