@@ -248,7 +248,7 @@ function renderDisparity() {
   container.innerHTML = items.map((item, i) => `
     <div data-aos="fade-up" data-aos-delay="${i * 100}">
       <div class="glass-card p-7 text-center h-full" style="border-radius:20px;border:1px solid rgba(148,163,184,0.12);background:rgba(15,23,42,0.5);backdrop-filter:blur(14px);transition:transform 350ms cubic-bezier(0.16,1,0.3,1),box-shadow 300ms ease,border-color 300ms ease;">
-        <div style="font-family:'Lexend Deca',sans-serif;font-size:3.25rem;font-weight:900;letter-spacing:-0.04em;line-height:1;" class="text-red-400 mb-4">${item.stat}</div>
+        <div style="font-family:'Lexend Deca',sans-serif;font-size:3.25rem;font-weight:900;letter-spacing:-0.04em;line-height:1;" class="text-red-400 mb-4" data-countup="${item.stat}">${item.stat}</div>
         <p class="body-sm text-slate-400" style="line-height:1.7;">${item.desc}</p>
       </div>
     </div>
