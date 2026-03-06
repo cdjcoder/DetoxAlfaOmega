@@ -30,7 +30,7 @@
     const parsed = parseStatValue(target);
     if (!parsed) return;
 
-    el.setAttribute("data-countup-done", "1");
+    if (el._countupRaf) cancelAnimationFrame(el._countupRaf);
 
     const { prefix, suffix, num, decimals } = parsed;
     let startTime = null;
@@ -47,21 +47,38 @@
       el.textContent = prefix + formatNumber(current, decimals) + suffix;
 
       if (progress < 1) {
-        requestAnimationFrame(step);
+        el._countupRaf = requestAnimationFrame(step);
       } else {
         el.textContent = target;
+        el._countupRaf = null;
       }
     }
 
-    requestAnimationFrame(step);
+    el._countupRaf = requestAnimationFrame(step);
+  }
+
+  function resetElement(el) {
+    if (el._countupRaf) {
+      cancelAnimationFrame(el._countupRaf);
+      el._countupRaf = null;
+    }
+    const target = el.getAttribute("data-countup");
+    if (target) {
+      const parsed = parseStatValue(target);
+      if (parsed) {
+        el.textContent = parsed.prefix + formatNumber(0, parsed.decimals) + parsed.suffix;
+      }
+    }
   }
 
   function observeStats() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !entry.target.getAttribute("data-countup-done")) {
+          if (entry.isIntersecting) {
             animateElement(entry.target);
+          } else {
+            resetElement(entry.target);
           }
         });
       },
@@ -69,9 +86,7 @@
     );
 
     document.querySelectorAll("[data-countup]").forEach((el) => {
-      if (!el.getAttribute("data-countup-done")) {
-        observer.observe(el);
-      }
+      observer.observe(el);
     });
 
     return observer;
@@ -84,8 +99,11 @@
 
     const rootNode = document.getElementById("root") || document.body;
     const mutationObserver = new MutationObserver(() => {
-      document.querySelectorAll("[data-countup]:not([data-countup-done])").forEach((el) => {
-        observer.observe(el);
+      document.querySelectorAll("[data-countup]").forEach((el) => {
+        if (!el._countupObserved) {
+          el._countupObserved = true;
+          observer.observe(el);
+        }
       });
     });
     mutationObserver.observe(rootNode, { childList: true, subtree: true });
