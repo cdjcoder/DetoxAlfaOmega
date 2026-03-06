@@ -441,10 +441,12 @@ function handleScroll() {
 
   // Back to top button
   const btn = document.getElementById('backToTop');
-  if (scrollY > 400) {
-    btn.classList.add('visible');
-  } else {
-    btn.classList.remove('visible');
+  if (btn) {
+    if (scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
   }
 }
 
