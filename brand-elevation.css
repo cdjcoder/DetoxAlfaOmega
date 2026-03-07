@@ -166,6 +166,55 @@ body {
   opacity: 0.7;
 }
 
+
+/* ── Subtle 3D Ambient Depth (selected sections) ── */
+
+#root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13)) {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13))::before {
+  content: "";
+  position: absolute;
+  inset: -16% -7%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.46;
+  transform: perspective(1300px) rotateX(14deg) rotate(-4deg) scale(1.05);
+  transform-origin: center top;
+  background:
+    radial-gradient(ellipse 30% 24% at 18% 38%, rgba(125, 211, 252, 0.18) 0%, rgba(125, 211, 252, 0.02) 66%, transparent 76%),
+    radial-gradient(ellipse 26% 20% at 82% 34%, rgba(167, 139, 250, 0.16) 0%, rgba(167, 139, 250, 0.02) 65%, transparent 76%),
+    radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.2) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.18) 0 1px, transparent 2px),
+    repeating-linear-gradient(
+      90deg,
+      rgba(125, 211, 252, 0.09) 0 8%,
+      transparent 8% 22%,
+      rgba(59, 130, 246, 0.07) 22% 30%,
+      transparent 30% 52%,
+      rgba(167, 139, 250, 0.08) 52% 60%,
+      transparent 60% 100%
+    ),
+    linear-gradient(130deg, rgba(2, 132, 199, 0.14) 0%, rgba(30, 64, 175, 0.16) 45%, rgba(30, 41, 59, 0.18) 100%);
+  filter: blur(0.8px);
+  animation: ambientDepthShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes ambientDepthShift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 0 0, 0 0, 0 0, 0% 0%, 50% 0%;
+    transform: perspective(1300px) rotateX(14deg) rotate(-4deg) scale(1.05);
+  }
+
+  100% {
+    background-position: 8% 12%, 92% 8%, 4% 6%, -2% 4%, 6% -2%, 10% 0%, 45% 8%;
+    transform: perspective(1300px) rotateX(14deg) rotate(-2deg) scale(1.06);
+  }
+}
+
 #root > div > section#order::after {
   display: none;
 }
@@ -486,21 +535,21 @@ body {
 
 #backToTop {
   position: fixed !important;
-  bottom: 2.5rem !important;
-  right: 2.5rem !important;
+  bottom: 1rem !important;
+  right: 1rem !important;
   left: auto !important;
   top: auto !important;
   z-index: 99999 !important;
-  width: 60px;
-  height: 60px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 64px;
+  height: 64px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff6b7f, #e11d48);
+  background: linear-gradient(135deg, #fb7185, #be123c);
   color: #fff;
   cursor: pointer;
   box-shadow:
-    0 0 20px rgba(225, 29, 72, 0.5),
-    0 8px 24px rgba(225, 29, 72, 0.4),
+    0 0 26px rgba(225, 29, 72, 0.65),
+    0 10px 28px rgba(225, 29, 72, 0.5),
     0 2px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
@@ -604,17 +653,38 @@ body {
    RESPONSIVE — Mobile (≤640px)
    ══════════════════════════════════════ */
 
+
+
+/* Keep any alternative back-to-top implementation pinned visibly in the same corner */
+button[aria-label="Back to top"] {
+  right: 1rem !important;
+  left: auto !important;
+  bottom: 1rem !important;
+  z-index: 99999 !important;
+}
 @media (max-width: 640px) {
   :root {
     --brand-space-section: clamp(2.5rem, 6vw, 4rem);
   }
 
+  button[aria-label="Back to top"] {
+    right: 0.75rem !important;
+    bottom: 0.75rem !important;
+  }
+
   #backToTop {
-    bottom: 1.25rem !important;
-    right: 1.25rem !important;
+    bottom: 0.75rem !important;
+    right: 0.75rem !important;
     left: auto !important;
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
+  }
+
+  #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13))::before {
+    opacity: 0.32;
+    inset: -10% -5%;
+    transform: perspective(950px) rotateX(9deg) rotate(-2deg) scale(1.03);
+    animation-duration: 24s;
   }
 
   /* All containers: full-width with minimal padding */
