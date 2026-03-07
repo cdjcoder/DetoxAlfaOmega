@@ -485,10 +485,12 @@ body {
 /* ── Back to Top Button ── */
 
 #backToTop {
-  position: fixed;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  z-index: 9999;
+  position: fixed !important;
+  bottom: 2.5rem !important;
+  right: 2.5rem !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 99999 !important;
   width: 60px;
   height: 60px;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -608,8 +610,9 @@ body {
   }
 
   #backToTop {
-    bottom: 1.25rem;
-    right: 1.25rem;
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+    left: auto !important;
     width: 52px;
     height: 52px;
   }
