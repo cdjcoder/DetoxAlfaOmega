@@ -148,35 +148,35 @@ const DATA = {
 
   results: {
     en: [
-      { img: "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?w=800&q=80&auto=format&fit=crop", alt: "Clearer skin", t: "Clearer, More Radiant Skin", d: "As the liver and kidneys begin clearing what was exiting through your pores." },
-      { img: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop", alt: "Natural energy", t: "Return of Natural Energy", d: "Clean, sustained vitality — not the stimulant kind. The kind that comes from a body running efficiently." },
-      { img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop", alt: "Mental clarity", t: "Mental Clarity & Focus", d: "Brain fog lifts when the internal chemical load lightens and inflammation subsides." },
-      { img: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80&auto=format&fit=crop", alt: "Less bloated", t: "Lighter, Less Bloated", d: "As bile flow improves, digestion becomes more comfortable and efficient." },
-      { img: "https://images.unsplash.com/photo-1560750588-73207b1ef5b0?w=800&q=80&auto=format&fit=crop", alt: "Reduced puffiness", t: "Reduced Puffiness", d: "Kidneys clearing waste more efficiently — visible in your face and ankles." },
-      { img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80&auto=format&fit=crop", alt: "Better sleep", t: "Better Quality Sleep", d: "A calmer, less toxic internal environment supports deeper, more restorative rest." }
+      { img: "/11_wellness_person_health_vitality.jpg", alt: "Clearer skin", t: "Clearer, More Radiant Skin", d: "As the liver and kidneys begin clearing what was exiting through your pores." },
+      { img: "/fatigue-03.jpg", alt: "Natural energy", t: "Return of Natural Energy", d: "Clean, sustained vitality — not the stimulant kind. The kind that comes from a body running efficiently." },
+      { img: "/brainfog-01.jpg", alt: "Mental clarity", t: "Mental Clarity & Focus", d: "Brain fog lifts when the internal chemical load lightens and inflammation subsides." },
+      { img: "/bloating-01.jpg", alt: "Less bloated", t: "Lighter, Less Bloated", d: "As bile flow improves, digestion becomes more comfortable and efficient." },
+      { img: "/swelling-01.jpg", alt: "Reduced puffiness", t: "Reduced Puffiness", d: "Kidneys clearing waste more efficiently — visible in your face and ankles." },
+      { img: "/kidney-06.jpg", alt: "Better kidney health", t: "Better Quality Sleep", d: "A calmer, less toxic internal environment supports deeper, more restorative rest." }
     ],
     es: [
-      { img: "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?w=800&q=80&auto=format&fit=crop", alt: "Piel más clara", t: "Piel Más Clara y Radiante", d: "A medida que el hígado y los riñones comienzan a eliminar lo que salía por tus poros." },
-      { img: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80&auto=format&fit=crop", alt: "Energía natural", t: "Retorno de la Energía Natural", d: "Vitalidad limpia y sostenida — no el tipo de estimulante. El tipo que proviene de un cuerpo que funciona eficientemente." },
-      { img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop", alt: "Claridad mental", t: "Claridad Mental y Enfoque", d: "La niebla mental se levanta cuando la carga química interna se aligera y la inflamación disminuye." },
-      { img: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&q=80&auto=format&fit=crop", alt: "Menos hinchado", t: "Más Ligero, Menos Hinchado", d: "A medida que mejora el flujo de bilis, la digestión se vuelve más cómoda y eficiente." },
-      { img: "https://images.unsplash.com/photo-1560750588-73207b1ef5b0?w=800&q=80&auto=format&fit=crop", alt: "Menos hinchazón", t: "Reducción de la Hinchazón", d: "Los riñones eliminan los residuos más eficientemente — visible en tu cara y tobillos." },
-      { img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80&auto=format&fit=crop", alt: "Mejor sueño", t: "Mejor Calidad de Sueño", d: "Un ambiente interno más tranquilo y menos tóxico apoya un descanso más profundo y restaurador." }
+      { img: "/11_wellness_person_health_vitality.jpg", alt: "Piel más clara", t: "Piel Más Clara y Radiante", d: "A medida que el hígado y los riñones comienzan a eliminar lo que salía por tus poros." },
+      { img: "/fatigue-03.jpg", alt: "Energía natural", t: "Retorno de la Energía Natural", d: "Vitalidad limpia y sostenida — no el tipo de estimulante. El tipo que proviene de un cuerpo que funciona eficientemente." },
+      { img: "/brainfog-01.jpg", alt: "Claridad mental", t: "Claridad Mental y Enfoque", d: "La niebla mental se levanta cuando la carga química interna se aligera y la inflamación disminuye." },
+      { img: "/bloating-01.jpg", alt: "Menos hinchado", t: "Más Ligero, Menos Hinchado", d: "A medida que mejora el flujo de bilis, la digestión se vuelve más cómoda y eficiente." },
+      { img: "/swelling-01.jpg", alt: "Menos hinchazón", t: "Reducción de la Hinchazón", d: "Los riñones eliminan los residuos más eficientemente — visible en tu cara y tobillos." },
+      { img: "/kidney-06.jpg", alt: "Mejor salud renal", t: "Mejor Calidad de Sueño", d: "Un ambiente interno más tranquilo y menos tóxico apoya un descanso más profundo y restaurador." }
     ]
   },
 
   lifestyle: {
     en: [
-      { img: "https://images.unsplash.com/photo-1559839914-17aae19cec71?w=600&q=80&auto=format&fit=crop", alt: "Drink water", t: "Drink Plenty of Filtered Water", d: "Hydration is essential — your kidneys cannot flush waste without adequate fluid." },
-      { img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&auto=format&fit=crop", alt: "Plant meals", t: "Eat Light, Plant-Forward Meals", d: "Reduce the liver's processing load. Whole foods only during the protocol window." },
-      { img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&auto=format&fit=crop", alt: "No alcohol", t: "Eliminate Alcohol Completely", d: "Let your liver focus entirely on what it's been carrying. No exceptions." },
-      { img: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80&auto=format&fit=crop", alt: "Prioritize rest", t: "Prioritise Sleep", d: "The liver performs its deepest detoxification work between 1–3am while you sleep." }
+      { img: "/08_lemon_kidney_health_st_vincents.jpg", alt: "Drink water", t: "Drink Plenty of Filtered Water", d: "Hydration is essential — your kidneys cannot flush waste without adequate fluid." },
+      { img: "/07_herb_artichoke_leaf_plant.jpg", alt: "Plant meals", t: "Eat Light, Plant-Forward Meals", d: "Reduce the liver's processing load. Whole foods only during the protocol window." },
+      { img: "/06_herb_milk_thistle_blossom.jpg", alt: "Herbal support", t: "Eliminate Alcohol Completely", d: "Let your liver focus entirely on what it's been carrying. No exceptions." },
+      { img: "/07_herb_dandelion_spring_sunshine.jpg", alt: "Prioritize rest", t: "Prioritise Sleep", d: "The liver performs its deepest detoxification work between 1–3am while you sleep." }
     ],
     es: [
-      { img: "https://images.unsplash.com/photo-1559839914-17aae19cec71?w=600&q=80&auto=format&fit=crop", alt: "Bebe agua", t: "Bebe Mucha Agua Filtrada", d: "La hidratación es esencial — tus riñones no pueden eliminar desechos sin líquido adecuado." },
-      { img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&auto=format&fit=crop", alt: "Comidas vegetales", t: "Come Comidas Ligeras y Vegetales", d: "Reduce la carga de procesamiento del hígado. Solo alimentos integrales durante el protocolo." },
-      { img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&auto=format&fit=crop", alt: "Sin alcohol", t: "Elimina el Alcohol Completamente", d: "Deja que tu hígado se enfoque completamente en lo que ha estado cargando. Sin excepciones." },
-      { img: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80&auto=format&fit=crop", alt: "Prioriza el descanso", t: "Prioriza el Sueño", d: "El hígado realiza su trabajo de desintoxicación más profundo entre la 1–3am mientras duermes." }
+      { img: "/08_lemon_kidney_health_st_vincents.jpg", alt: "Bebe agua", t: "Bebe Mucha Agua Filtrada", d: "La hidratación es esencial — tus riñones no pueden eliminar desechos sin líquido adecuado." },
+      { img: "/07_herb_artichoke_leaf_plant.jpg", alt: "Comidas vegetales", t: "Come Comidas Ligeras y Vegetales", d: "Reduce la carga de procesamiento del hígado. Solo alimentos integrales durante el protocolo." },
+      { img: "/06_herb_milk_thistle_blossom.jpg", alt: "Apoyo herbal", t: "Elimina el Alcohol Completamente", d: "Deja que tu hígado se enfoque completamente en lo que ha estado cargando. Sin excepciones." },
+      { img: "/07_herb_dandelion_spring_sunshine.jpg", alt: "Prioriza el descanso", t: "Prioriza el Sueño", d: "El hígado realiza su trabajo de desintoxicación más profundo entre la 1–3am mientras duermes." }
     ]
   },
 

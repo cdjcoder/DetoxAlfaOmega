@@ -15,8 +15,8 @@
 
         <div class="prostate-hero-visual">
           <div class="prostate-hero-img-wrap">
-            <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=900&q=80&auto=format&fit=crop"
-                 alt="Kidney and urinary health" class="prostate-hero-img" />
+            <img src="/kidney-03.jpg"
+                 alt="Detailed kidney anatomical illustration" class="prostate-hero-img" />
             <div class="prostate-hero-img-overlay"></div>
           </div>
           <div class="prostate-hero-text">
@@ -42,8 +42,8 @@
         <div class="prostate-grid">
           <article class="prostate-card">
             <div class="prostate-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80&auto=format&fit=crop"
-                   alt="Kidney anatomy and health" class="prostate-card-img" />
+              <img src="/prostate-04.jpg"
+                   alt="BPH enlarged prostate diagram" class="prostate-card-img" />
             </div>
             <h3>The Two Ingredients Big Pharma Hopes You Ignore</h3>
             <p>
@@ -53,8 +53,8 @@
           </article>
           <article class="prostate-card">
             <div class="prostate-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80&auto=format&fit=crop"
-                   alt="Natural supplements and wellness" class="prostate-card-img" />
+              <img src="/12_product_milk_thistle_nccih.jpg"
+                   alt="Milk thistle supplement" class="prostate-card-img" />
             </div>
             <h3>Aloe Vera + Shilajit: Source-Level <span class="pk">Prostate</span> Support</h3>
             <p>
@@ -81,8 +81,8 @@
         </div>
 
         <div class="prostate-img-banner">
-          <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=1200&q=80&auto=format&fit=crop"
-               alt="Healthy man wellness vitality" class="prostate-banner-img" />
+          <img src="/protocol-kidneys.jpg"
+               alt="Kidney protocol illustration" class="prostate-banner-img" />
           <div class="prostate-banner-overlay">
             <span class="prostate-banner-label">Supporting <span class="pk-light">Prostate</span> &amp; Kidney Health Naturally</span>
           </div>
