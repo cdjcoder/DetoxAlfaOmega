@@ -169,12 +169,12 @@ body {
 
 /* ── Section 3 (24% Problem): subtle floating hero-style ambient elements ── */
 
-#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5)) {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6)) {
   overflow: hidden;
   isolation: isolate;
 }
 
-#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5))::before {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))::before {
   content: "";
   position: absolute;
   inset: -8% -4%;
@@ -190,12 +190,12 @@ body {
     radial-gradient(circle at 64% 14%, rgba(255, 255, 255, 0.78) 0 1.4px, transparent 3px),
     radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.8) 0 1.4px, transparent 3px),
     linear-gradient(90deg, transparent 0 12%, rgba(56, 189, 248, 0.28) 16% 23%, transparent 29% 68%, rgba(168, 85, 247, 0.24) 74% 82%, transparent 88% 100%);
-  filter: blur(0.2px);
-  mix-blend-mode: screen;
-  animation: section24Float 12s ease-in-out infinite alternate;
+  filter: none;
+  mix-blend-mode: normal;
+  animation: section24Float 16s ease-in-out infinite alternate;
 }
 
-#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5))::after {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))::after {
   background:
     linear-gradient(90deg, transparent 18%, rgba(125, 211, 252, 0.08) 22%, transparent 30%, transparent 66%, rgba(196, 181, 253, 0.08) 72%, transparent 80%),
     radial-gradient(ellipse 900px 300px at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
@@ -249,9 +249,9 @@ body {
       transparent 60% 100%
     ),
     linear-gradient(130deg, rgba(2, 132, 199, 0.2) 0%, rgba(30, 64, 175, 0.24) 45%, rgba(30, 41, 59, 0.22) 100%);
-  filter: blur(0.45px);
-  mix-blend-mode: screen;
-  animation: ambientDepthShift 18s ease-in-out infinite alternate;
+  filter: none;
+  mix-blend-mode: normal;
+  animation: ambientDepthShift 22s ease-in-out infinite alternate;
 }
 
 @keyframes ambientDepthShift {
@@ -738,7 +738,7 @@ button[aria-label="Back to top"] {
     animation-duration: 24s;
   }
 
-  #root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5))::before {
+  #root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))::before {
     opacity: 0.44;
     inset: -5% -3%;
     animation-duration: 18s;
@@ -906,5 +906,26 @@ button[aria-label="Back to top"] {
   #root button {
     transition: none !important;
     transform: none !important;
+  }
+}
+
+
+/* ── Scroll Performance Optimizations ── */
+
+#root > div > section::before,
+#root > div > section::after {
+  backface-visibility: hidden;
+}
+
+body.is-scrolling #root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))::before,
+body.is-scrolling #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13))::before {
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 1024px) {
+  #root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5), :nth-of-type(6))::before,
+  #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13))::before {
+    animation-duration: 30s !important;
+    opacity: 0.3 !important;
   }
 }
