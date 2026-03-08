@@ -169,12 +169,12 @@ body {
 
 /* ── Section 3 (24% Problem): subtle floating hero-style ambient elements ── */
 
-#root > div > section:nth-of-type(3) {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4)) {
   overflow: hidden;
   isolation: isolate;
 }
 
-#root > div > section:nth-of-type(3)::before {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4))::before {
   content: "";
   position: absolute;
   inset: -8% -4%;
@@ -195,7 +195,7 @@ body {
   animation: section24Float 12s ease-in-out infinite alternate;
 }
 
-#root > div > section:nth-of-type(3)::after {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4))::after {
   background:
     linear-gradient(90deg, transparent 18%, rgba(125, 211, 252, 0.08) 22%, transparent 30%, transparent 66%, rgba(196, 181, 253, 0.08) 72%, transparent 80%),
     radial-gradient(ellipse 900px 300px at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
@@ -215,36 +215,8 @@ body {
 }
 
 
-/* ── Section 4 (Dialysis Business Model): matching floating objects with movement ── */
 
-#root > div > section:nth-of-type(4)::after {
-  background:
-    radial-gradient(circle at 16% 34%, rgba(56, 189, 248, 0.78) 0%, rgba(56, 189, 248, 0.28) 3.8%, transparent 8.8%),
-    radial-gradient(circle at 82% 24%, rgba(168, 85, 247, 0.75) 0%, rgba(168, 85, 247, 0.25) 3.7%, transparent 8.6%),
-    radial-gradient(circle at 74% 70%, rgba(250, 204, 21, 0.66) 0%, rgba(250, 204, 21, 0.21) 3.6%, transparent 8.4%),
-    radial-gradient(circle at 26% 76%, rgba(20, 184, 166, 0.62) 0%, rgba(20, 184, 166, 0.2) 3.6%, transparent 8.2%),
-    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.9) 0 1.5px, transparent 3px),
-    radial-gradient(circle at 62% 14%, rgba(255, 255, 255, 0.8) 0 1.4px, transparent 3px),
-    radial-gradient(circle at 91% 58%, rgba(255, 255, 255, 0.82) 0 1.4px, transparent 3px),
-    linear-gradient(90deg, transparent 0 10%, rgba(56, 189, 248, 0.22) 14% 21%, transparent 28% 64%, rgba(168, 85, 247, 0.2) 70% 78%, transparent 85% 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 18%, transparent 82%, rgba(0, 0, 0, 0.06) 100%);
-  opacity: 0.78;
-  filter: blur(0.2px);
-  mix-blend-mode: screen;
-  animation: sectionDialysisFloat 10s ease-in-out infinite alternate;
-}
 
-@keyframes sectionDialysisFloat {
-  0% {
-    transform: translate3d(0, 0, 0);
-    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0 0, 0 0, 0 0, 0% 0%, 0% 0%;
-  }
-
-  100% {
-    transform: translate3d(0, -12px, 0);
-    background-position: 4% -5%, -3% 5%, 3% -4%, -3% 4%, 2% -2%, -2% 2%, 2% -2%, 6% 0%, 0% 0%;
-  }
-}
 /* ── Subtle 3D Ambient Depth (selected sections) ── */
 
 #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13)) {
@@ -766,15 +738,10 @@ button[aria-label="Back to top"] {
     animation-duration: 24s;
   }
 
-  #root > div > section:nth-of-type(3)::before {
+  #root > div > section:is(:nth-of-type(3), :nth-of-type(4))::before {
     opacity: 0.44;
     inset: -5% -3%;
     animation-duration: 18s;
-  }
-
-  #root > div > section:nth-of-type(4)::after {
-    opacity: 0.62;
-    animation-duration: 13s;
   }
 
 
