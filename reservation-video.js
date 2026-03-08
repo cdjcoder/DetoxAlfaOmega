@@ -1,38 +1,57 @@
 (() => {
-  const YOUTUBE_EMBED_URL = 'https://www.youtube.com/embed/0G9pJl5OxdY';
+  const EMBED_HTML = `
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/0G9pJl5OxdY?si=XFByN6PbHxI4FLDt"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      loading="lazy"
+      style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+    ></iframe>
+  `;
 
-  const mountVideo = () => {
+  const ensureReservationVideo = () => {
     const orderSection = document.getElementById('order');
-    if (!orderSection || orderSection.querySelector('.reservation-video-wrap')) return;
+    if (!orderSection) return;
 
-    const container = orderSection.querySelector('.max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl') || orderSection.firstElementChild;
-    if (!container) return;
+    const container =
+      orderSection.querySelector(':scope > div') ||
+      orderSection.querySelector('.max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl');
+
+    if (!container || container.querySelector('.reservation-video-wrap')) return;
 
     const videoWrap = document.createElement('div');
     videoWrap.className = 'reservation-video-wrap mb-6 rounded-2xl overflow-hidden';
     videoWrap.innerHTML = `
       <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
-        <iframe
-          src="${YOUTUBE_EMBED_URL}"
-          title="Alfa Omega Detox Video"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-          style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-        ></iframe>
+        ${EMBED_HTML}
       </div>
     `;
 
-    const insertBeforeTarget = container.querySelector('h2, h3, .mb-6, iframe#JotFormIFrame-260597174818065')?.nextElementSibling || container.firstElementChild;
-    container.insertBefore(videoWrap, insertBeforeTarget);
+    container.prepend(videoWrap);
+  };
+
+  const boot = () => {
+    ensureReservationVideo();
+
+    const root = document.getElementById('root');
+    if (!root) return;
+
+    const observer = new MutationObserver(() => {
+      ensureReservationVideo();
+    });
+
+    observer.observe(root, { childList: true, subtree: true });
+    window.addEventListener('beforeunload', () => observer.disconnect(), { once: true });
   };
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', mountVideo);
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    mountVideo();
+    boot();
   }
-
-  window.addEventListener('load', mountVideo);
 })();
