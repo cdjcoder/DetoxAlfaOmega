@@ -180,18 +180,19 @@ body {
   inset: -8% -4%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.42;
+  opacity: 0.72;
   background:
-    radial-gradient(circle at 18% 26%, rgba(125, 211, 252, 0.38) 0%, rgba(125, 211, 252, 0.09) 3.2%, transparent 7%),
-    radial-gradient(circle at 81% 30%, rgba(196, 181, 253, 0.34) 0%, rgba(196, 181, 253, 0.08) 3.1%, transparent 7%),
-    radial-gradient(circle at 72% 68%, rgba(250, 204, 21, 0.26) 0%, rgba(250, 204, 21, 0.08) 3.1%, transparent 7%),
-    radial-gradient(circle at 26% 70%, rgba(110, 231, 183, 0.26) 0%, rgba(110, 231, 183, 0.08) 2.8%, transparent 6.8%),
-    radial-gradient(circle at 13% 18%, rgba(255, 255, 255, 0.55) 0 1px, transparent 2.5px),
-    radial-gradient(circle at 64% 14%, rgba(255, 255, 255, 0.45) 0 1px, transparent 2.5px),
-    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.5) 0 1px, transparent 2.5px),
-    linear-gradient(90deg, transparent 0 15%, rgba(125, 211, 252, 0.14) 18% 22%, transparent 25% 74%, rgba(196, 181, 253, 0.12) 78% 82%, transparent 85% 100%);
-  filter: blur(0.5px);
-  animation: section24Float 14s ease-in-out infinite alternate;
+    radial-gradient(circle at 18% 26%, rgba(56, 189, 248, 0.75) 0%, rgba(56, 189, 248, 0.28) 4.2%, transparent 9%),
+    radial-gradient(circle at 81% 30%, rgba(168, 85, 247, 0.72) 0%, rgba(168, 85, 247, 0.25) 4%, transparent 8.8%),
+    radial-gradient(circle at 72% 68%, rgba(250, 204, 21, 0.64) 0%, rgba(250, 204, 21, 0.2) 3.8%, transparent 8.4%),
+    radial-gradient(circle at 26% 70%, rgba(16, 185, 129, 0.62) 0%, rgba(16, 185, 129, 0.2) 3.6%, transparent 8.1%),
+    radial-gradient(circle at 13% 18%, rgba(255, 255, 255, 0.85) 0 1.5px, transparent 3.2px),
+    radial-gradient(circle at 64% 14%, rgba(255, 255, 255, 0.78) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.8) 0 1.4px, transparent 3px),
+    linear-gradient(90deg, transparent 0 12%, rgba(56, 189, 248, 0.28) 16% 23%, transparent 29% 68%, rgba(168, 85, 247, 0.24) 74% 82%, transparent 88% 100%);
+  filter: blur(0.2px);
+  mix-blend-mode: screen;
+  animation: section24Float 12s ease-in-out infinite alternate;
 }
 
 #root > div > section:nth-of-type(3)::after {
@@ -225,27 +226,28 @@ body {
   inset: -16% -7%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.46;
+  opacity: 0.64;
   transform: perspective(1300px) rotateX(14deg) rotate(-4deg) scale(1.05);
   transform-origin: center top;
   background:
-    radial-gradient(ellipse 30% 24% at 18% 38%, rgba(125, 211, 252, 0.18) 0%, rgba(125, 211, 252, 0.02) 66%, transparent 76%),
-    radial-gradient(ellipse 26% 20% at 82% 34%, rgba(167, 139, 250, 0.16) 0%, rgba(167, 139, 250, 0.02) 65%, transparent 76%),
+    radial-gradient(ellipse 32% 25% at 18% 38%, rgba(56, 189, 248, 0.36) 0%, rgba(56, 189, 248, 0.08) 66%, transparent 78%),
+    radial-gradient(ellipse 28% 21% at 82% 34%, rgba(168, 85, 247, 0.34) 0%, rgba(168, 85, 247, 0.08) 65%, transparent 78%),
     radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.2) 0 1px, transparent 2px),
     radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.16) 0 1px, transparent 2px),
     radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.18) 0 1px, transparent 2px),
     repeating-linear-gradient(
       90deg,
-      rgba(125, 211, 252, 0.09) 0 8%,
+      rgba(56, 189, 248, 0.16) 0 10%,
       transparent 8% 22%,
-      rgba(59, 130, 246, 0.07) 22% 30%,
+      rgba(59, 130, 246, 0.12) 24% 34%,
       transparent 30% 52%,
-      rgba(167, 139, 250, 0.08) 52% 60%,
+      rgba(168, 85, 247, 0.14) 54% 64%,
       transparent 60% 100%
     ),
-    linear-gradient(130deg, rgba(2, 132, 199, 0.14) 0%, rgba(30, 64, 175, 0.16) 45%, rgba(30, 41, 59, 0.18) 100%);
-  filter: blur(0.8px);
-  animation: ambientDepthShift 20s ease-in-out infinite alternate;
+    linear-gradient(130deg, rgba(2, 132, 199, 0.2) 0%, rgba(30, 64, 175, 0.24) 45%, rgba(30, 41, 59, 0.22) 100%);
+  filter: blur(0.45px);
+  mix-blend-mode: screen;
+  animation: ambientDepthShift 18s ease-in-out infinite alternate;
 }
 
 @keyframes ambientDepthShift {
@@ -726,14 +728,14 @@ button[aria-label="Back to top"] {
   }
 
   #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13))::before {
-    opacity: 0.32;
+    opacity: 0.46;
     inset: -10% -5%;
     transform: perspective(950px) rotateX(9deg) rotate(-2deg) scale(1.03);
     animation-duration: 24s;
   }
 
   #root > div > section:nth-of-type(3)::before {
-    opacity: 0.28;
+    opacity: 0.44;
     inset: -5% -3%;
     animation-duration: 18s;
   }
