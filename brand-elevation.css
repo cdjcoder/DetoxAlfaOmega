@@ -166,6 +166,134 @@ body {
   opacity: 0.7;
 }
 
+
+/* ── Section 3 (24% Problem): subtle floating hero-style ambient elements ── */
+
+#root > div > section:nth-of-type(3) {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#root > div > section:nth-of-type(3)::before {
+  content: "";
+  position: absolute;
+  inset: -8% -4%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.72;
+  background:
+    radial-gradient(circle at 18% 26%, rgba(56, 189, 248, 0.75) 0%, rgba(56, 189, 248, 0.28) 4.2%, transparent 9%),
+    radial-gradient(circle at 81% 30%, rgba(168, 85, 247, 0.72) 0%, rgba(168, 85, 247, 0.25) 4%, transparent 8.8%),
+    radial-gradient(circle at 72% 68%, rgba(250, 204, 21, 0.64) 0%, rgba(250, 204, 21, 0.2) 3.8%, transparent 8.4%),
+    radial-gradient(circle at 26% 70%, rgba(16, 185, 129, 0.62) 0%, rgba(16, 185, 129, 0.2) 3.6%, transparent 8.1%),
+    radial-gradient(circle at 13% 18%, rgba(255, 255, 255, 0.85) 0 1.5px, transparent 3.2px),
+    radial-gradient(circle at 64% 14%, rgba(255, 255, 255, 0.78) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.8) 0 1.4px, transparent 3px),
+    linear-gradient(90deg, transparent 0 12%, rgba(56, 189, 248, 0.28) 16% 23%, transparent 29% 68%, rgba(168, 85, 247, 0.24) 74% 82%, transparent 88% 100%);
+  filter: blur(0.2px);
+  mix-blend-mode: screen;
+  animation: section24Float 12s ease-in-out infinite alternate;
+}
+
+#root > div > section:nth-of-type(3)::after {
+  background:
+    linear-gradient(90deg, transparent 18%, rgba(125, 211, 252, 0.08) 22%, transparent 30%, transparent 66%, rgba(196, 181, 253, 0.08) 72%, transparent 80%),
+    radial-gradient(ellipse 900px 300px at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.06) 100%);
+}
+
+@keyframes section24Float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0 0, 0 0, 0 0, 0% 0%;
+  }
+
+  100% {
+    transform: translate3d(0, -8px, 0);
+    background-position: 3% -4%, -2% 5%, 2% -3%, -3% 4%, 2% -3%, -2% 2%, 1% -2%, 5% 0%;
+  }
+}
+
+
+/* ── Section 4 (Dialysis Business Model): matching floating objects with movement ── */
+
+#root > div > section:nth-of-type(4)::after {
+  background:
+    radial-gradient(circle at 16% 34%, rgba(56, 189, 248, 0.78) 0%, rgba(56, 189, 248, 0.28) 3.8%, transparent 8.8%),
+    radial-gradient(circle at 82% 24%, rgba(168, 85, 247, 0.75) 0%, rgba(168, 85, 247, 0.25) 3.7%, transparent 8.6%),
+    radial-gradient(circle at 74% 70%, rgba(250, 204, 21, 0.66) 0%, rgba(250, 204, 21, 0.21) 3.6%, transparent 8.4%),
+    radial-gradient(circle at 26% 76%, rgba(20, 184, 166, 0.62) 0%, rgba(20, 184, 166, 0.2) 3.6%, transparent 8.2%),
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.9) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 62% 14%, rgba(255, 255, 255, 0.8) 0 1.4px, transparent 3px),
+    radial-gradient(circle at 91% 58%, rgba(255, 255, 255, 0.82) 0 1.4px, transparent 3px),
+    linear-gradient(90deg, transparent 0 10%, rgba(56, 189, 248, 0.22) 14% 21%, transparent 28% 64%, rgba(168, 85, 247, 0.2) 70% 78%, transparent 85% 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 18%, transparent 82%, rgba(0, 0, 0, 0.06) 100%);
+  opacity: 0.78;
+  filter: blur(0.2px);
+  mix-blend-mode: screen;
+  animation: sectionDialysisFloat 10s ease-in-out infinite alternate;
+}
+
+@keyframes sectionDialysisFloat {
+  0% {
+    transform: translate3d(0, 0, 0);
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0 0, 0 0, 0 0, 0% 0%, 0% 0%;
+  }
+
+  100% {
+    transform: translate3d(0, -12px, 0);
+    background-position: 4% -5%, -3% 5%, 3% -4%, -3% 4%, 2% -2%, -2% 2%, 2% -2%, 6% 0%, 0% 0%;
+  }
+}
+/* ── Subtle 3D Ambient Depth (selected sections) ── */
+
+#root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13)) {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13))::before {
+  content: "";
+  position: absolute;
+  inset: -16% -7%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.64;
+  transform: perspective(1300px) rotateX(14deg) rotate(-4deg) scale(1.05);
+  transform-origin: center top;
+  background:
+    radial-gradient(ellipse 32% 25% at 18% 38%, rgba(56, 189, 248, 0.36) 0%, rgba(56, 189, 248, 0.08) 66%, transparent 78%),
+    radial-gradient(ellipse 28% 21% at 82% 34%, rgba(168, 85, 247, 0.34) 0%, rgba(168, 85, 247, 0.08) 65%, transparent 78%),
+    radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.2) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.18) 0 1px, transparent 2px),
+    repeating-linear-gradient(
+      90deg,
+      rgba(56, 189, 248, 0.16) 0 10%,
+      transparent 8% 22%,
+      rgba(59, 130, 246, 0.12) 24% 34%,
+      transparent 30% 52%,
+      rgba(168, 85, 247, 0.14) 54% 64%,
+      transparent 60% 100%
+    ),
+    linear-gradient(130deg, rgba(2, 132, 199, 0.2) 0%, rgba(30, 64, 175, 0.24) 45%, rgba(30, 41, 59, 0.22) 100%);
+  filter: blur(0.45px);
+  mix-blend-mode: screen;
+  animation: ambientDepthShift 18s ease-in-out infinite alternate;
+}
+
+@keyframes ambientDepthShift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 0 0, 0 0, 0 0, 0% 0%, 50% 0%;
+    transform: perspective(1300px) rotateX(14deg) rotate(-4deg) scale(1.05);
+  }
+
+  100% {
+    background-position: 8% 12%, 92% 8%, 4% 6%, -2% 4%, 6% -2%, 10% 0%, 45% 8%;
+    transform: perspective(1300px) rotateX(14deg) rotate(-2deg) scale(1.06);
+  }
+}
+
 #root > div > section#order::after {
   display: none;
 }
@@ -486,21 +614,21 @@ body {
 
 #backToTop {
   position: fixed !important;
-  bottom: 2.5rem !important;
-  right: 2.5rem !important;
+  bottom: 1rem !important;
+  right: 1rem !important;
   left: auto !important;
   top: auto !important;
   z-index: 99999 !important;
-  width: 60px;
-  height: 60px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 64px;
+  height: 64px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff6b7f, #e11d48);
+  background: linear-gradient(135deg, #fb7185, #be123c);
   color: #fff;
   cursor: pointer;
   box-shadow:
-    0 0 20px rgba(225, 29, 72, 0.5),
-    0 8px 24px rgba(225, 29, 72, 0.4),
+    0 0 26px rgba(225, 29, 72, 0.65),
+    0 10px 28px rgba(225, 29, 72, 0.5),
     0 2px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
@@ -604,18 +732,51 @@ body {
    RESPONSIVE — Mobile (≤640px)
    ══════════════════════════════════════ */
 
+
+
+/* Keep any alternative back-to-top implementation pinned visibly in the same corner */
+button[aria-label="Back to top"] {
+  right: 1rem !important;
+  left: auto !important;
+  bottom: 1rem !important;
+  z-index: 99999 !important;
+}
 @media (max-width: 640px) {
   :root {
     --brand-space-section: clamp(2.5rem, 6vw, 4rem);
   }
 
-  #backToTop {
-    bottom: 1.25rem !important;
-    right: 1.25rem !important;
-    left: auto !important;
-    width: 52px;
-    height: 52px;
+  button[aria-label="Back to top"] {
+    right: 0.75rem !important;
+    bottom: 0.75rem !important;
   }
+
+  #backToTop {
+    bottom: 0.75rem !important;
+    right: 0.75rem !important;
+    left: auto !important;
+    width: 58px;
+    height: 58px;
+  }
+
+  #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13))::before {
+    opacity: 0.46;
+    inset: -10% -5%;
+    transform: perspective(950px) rotateX(9deg) rotate(-2deg) scale(1.03);
+    animation-duration: 24s;
+  }
+
+  #root > div > section:nth-of-type(3)::before {
+    opacity: 0.44;
+    inset: -5% -3%;
+    animation-duration: 18s;
+  }
+
+  #root > div > section:nth-of-type(4)::after {
+    opacity: 0.62;
+    animation-duration: 13s;
+  }
+
 
   /* All containers: full-width with minimal padding */
   #root .max-w-4xl,
