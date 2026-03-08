@@ -169,12 +169,12 @@ body {
 
 /* ── Section 3 (24% Problem): subtle floating hero-style ambient elements ── */
 
-#root > div > section:nth-of-type(3) {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5)) {
   overflow: hidden;
   isolation: isolate;
 }
 
-#root > div > section:nth-of-type(3)::before {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5))::before {
   content: "";
   position: absolute;
   inset: -8% -4%;
@@ -195,7 +195,7 @@ body {
   animation: section24Float 12s ease-in-out infinite alternate;
 }
 
-#root > div > section:nth-of-type(3)::after {
+#root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5))::after {
   background:
     linear-gradient(90deg, transparent 18%, rgba(125, 211, 252, 0.08) 22%, transparent 30%, transparent 66%, rgba(196, 181, 253, 0.08) 72%, transparent 80%),
     radial-gradient(ellipse 900px 300px at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
@@ -213,6 +213,10 @@ body {
     background-position: 3% -4%, -2% 5%, 2% -3%, -3% 4%, 2% -3%, -2% 2%, 1% -2%, 5% 0%;
   }
 }
+
+
+
+
 /* ── Subtle 3D Ambient Depth (selected sections) ── */
 
 #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13)) {
@@ -734,11 +738,12 @@ button[aria-label="Back to top"] {
     animation-duration: 24s;
   }
 
-  #root > div > section:nth-of-type(3)::before {
+  #root > div > section:is(:nth-of-type(3), :nth-of-type(4), :nth-of-type(5))::before {
     opacity: 0.44;
     inset: -5% -3%;
     animation-duration: 18s;
   }
+
 
   /* All containers: full-width with minimal padding */
   #root .max-w-4xl,
