@@ -167,6 +167,51 @@ body {
 }
 
 
+/* ── Section 3 (24% Problem): subtle floating hero-style ambient elements ── */
+
+#root > div > section:nth-of-type(3) {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#root > div > section:nth-of-type(3)::before {
+  content: "";
+  position: absolute;
+  inset: -8% -4%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.42;
+  background:
+    radial-gradient(circle at 18% 26%, rgba(125, 211, 252, 0.38) 0%, rgba(125, 211, 252, 0.09) 3.2%, transparent 7%),
+    radial-gradient(circle at 81% 30%, rgba(196, 181, 253, 0.34) 0%, rgba(196, 181, 253, 0.08) 3.1%, transparent 7%),
+    radial-gradient(circle at 72% 68%, rgba(250, 204, 21, 0.26) 0%, rgba(250, 204, 21, 0.08) 3.1%, transparent 7%),
+    radial-gradient(circle at 26% 70%, rgba(110, 231, 183, 0.26) 0%, rgba(110, 231, 183, 0.08) 2.8%, transparent 6.8%),
+    radial-gradient(circle at 13% 18%, rgba(255, 255, 255, 0.55) 0 1px, transparent 2.5px),
+    radial-gradient(circle at 64% 14%, rgba(255, 255, 255, 0.45) 0 1px, transparent 2.5px),
+    radial-gradient(circle at 88% 62%, rgba(255, 255, 255, 0.5) 0 1px, transparent 2.5px),
+    linear-gradient(90deg, transparent 0 15%, rgba(125, 211, 252, 0.14) 18% 22%, transparent 25% 74%, rgba(196, 181, 253, 0.12) 78% 82%, transparent 85% 100%);
+  filter: blur(0.5px);
+  animation: section24Float 14s ease-in-out infinite alternate;
+}
+
+#root > div > section:nth-of-type(3)::after {
+  background:
+    linear-gradient(90deg, transparent 18%, rgba(125, 211, 252, 0.08) 22%, transparent 30%, transparent 66%, rgba(196, 181, 253, 0.08) 72%, transparent 80%),
+    radial-gradient(ellipse 900px 300px at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.06) 100%);
+}
+
+@keyframes section24Float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0 0, 0 0, 0 0, 0% 0%;
+  }
+
+  100% {
+    transform: translate3d(0, -8px, 0);
+    background-position: 3% -4%, -2% 5%, 2% -3%, -3% 4%, 2% -3%, -2% 2%, 1% -2%, 5% 0%;
+  }
+}
 /* ── Subtle 3D Ambient Depth (selected sections) ── */
 
 #root > div > section:is(:nth-of-type(2), :nth-of-type(4), :nth-of-type(7), :nth-of-type(10), :nth-of-type(13)) {
@@ -685,6 +730,12 @@ button[aria-label="Back to top"] {
     inset: -10% -5%;
     transform: perspective(950px) rotateX(9deg) rotate(-2deg) scale(1.03);
     animation-duration: 24s;
+  }
+
+  #root > div > section:nth-of-type(3)::before {
+    opacity: 0.28;
+    inset: -5% -3%;
+    animation-duration: 18s;
   }
 
   /* All containers: full-width with minimal padding */
