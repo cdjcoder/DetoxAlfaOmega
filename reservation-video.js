@@ -1,5 +1,5 @@
 (function () {
-  var EMBED_IFRAME = '<iframe width="560" height="315" src="https://www.youtube.com/embed/0G9pJl5OxdY?si=XFByN6PbHxI4FLDt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>';
+  var EMBED_IFRAME = '<iframe src="https://player.vimeo.com/video/1171498475?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" title="Kidney Detox"></iframe>';
 
   function getLangToggleLabel() {
     var buttons = document.querySelectorAll('button');
