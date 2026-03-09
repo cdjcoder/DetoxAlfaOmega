@@ -1,84 +1,59 @@
-(() => {
-  const EMBED_HTML = `
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/0G9pJl5OxdY?si=XFByN6PbHxI4FLDt"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-      loading="lazy"
-      style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-    ></iframe>
-  `;
+(function () {
+  var EMBED_IFRAME = '<iframe src="https://player.vimeo.com/video/1171498475?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" title="Kidney Detox"></iframe>';
 
-  const isEnglishView = () => {
-    const langToggle = Array.from(document.querySelectorAll('button'))
-      .map((btn) => (btn.textContent || '').trim())
-      .find((txt) => txt.includes('🇪🇸 ES') || txt.includes('🇺🇸 EN'));
+  function getLangToggleLabel() {
+    var buttons = document.querySelectorAll('button');
+    for (var i = 0; i < buttons.length; i += 1) {
+      var txt = (buttons[i].textContent || '').trim();
+      if (txt.indexOf('🇪🇸 ES') !== -1 || txt.indexOf('🇺🇸 EN') !== -1) {
+        return txt;
+      }
+    }
+    return '';
+  }
 
-    if (langToggle?.includes('🇺🇸 EN')) return false;
-    if (langToggle?.includes('🇪🇸 ES')) return true;
+  function isEnglishView() {
+    var label = getLangToggleLabel();
+    if (!label) return true;
+    return label.indexOf('🇪🇸 ES') !== -1;
+  }
 
-    return true;
-  };
-
-
-  const ensureReservationVideo = () => {
-    const orderSection = document.getElementById('order');
+  function renderReservationVideo() {
+    var orderSection = document.getElementById('order');
     if (!orderSection) return;
 
-    const container =
-      orderSection.querySelector(':scope > div') ||
-      orderSection.querySelector('.max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl');
-
+    var container = orderSection.firstElementChild;
     if (!container) return;
 
-    const existingVideo = container.querySelector('.reservation-video-wrap');
+    var existing = container.querySelector('.reservation-video-wrap');
+
     if (!isEnglishView()) {
-      existingVideo?.remove();
+      if (existing) existing.remove();
       return;
     }
 
-    if (existingVideo) return;
+    if (existing) return;
 
-    const videoWrap = document.createElement('div');
-    videoWrap.className = 'reservation-video-wrap mb-6 rounded-2xl overflow-hidden';
-    videoWrap.innerHTML = `
-      <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
-        ${EMBED_HTML}
-      </div>
-    `;
+    var wrap = document.createElement('div');
+    wrap.className = 'reservation-video-wrap mb-6 rounded-2xl overflow-hidden';
+    wrap.innerHTML = '<div style="position:relative;width:100%;padding-top:56.25%;background:#000;">' + EMBED_IFRAME + '</div>';
+    container.insertBefore(wrap, container.firstChild);
+  }
 
-    container.prepend(videoWrap);
-  };
+  function boot() {
+    // Delay slightly to let the app mount fully, then render once.
+    window.setTimeout(renderReservationVideo, 250);
 
-  const boot = () => {
-    ensureReservationVideo();
-
-    const root = document.getElementById('root');
-    if (!root) return;
-
-    const observer = new MutationObserver(() => {
-      ensureReservationVideo();
-    });
-
-    observer.observe(root, { childList: true, subtree: true });
-
-
-    document.addEventListener('click', (event) => {
-      const button = event.target.closest('button');
+    document.addEventListener('click', function (event) {
+      var button = event.target.closest('button');
       if (!button) return;
-      const label = (button.textContent || '').trim();
-      if (label.includes('🇪🇸 ES') || label.includes('🇺🇸 EN')) {
-        window.setTimeout(ensureReservationVideo, 0);
-        window.setTimeout(ensureReservationVideo, 300);
+
+      var label = (button.textContent || '').trim();
+      if (label.indexOf('🇪🇸 ES') !== -1 || label.indexOf('🇺🇸 EN') !== -1) {
+        window.setTimeout(renderReservationVideo, 150);
       }
     });
-    window.addEventListener('beforeunload', () => observer.disconnect(), { once: true });
-  };
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
