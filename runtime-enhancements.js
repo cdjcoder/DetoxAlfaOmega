@@ -7,7 +7,6 @@
     './countup.js',
     './scroll-performance.js',
     './reservation-video.js',
-    './image-lightbox.js',
     'https://player.vimeo.com/api/player.js',
     'https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'
   ];
