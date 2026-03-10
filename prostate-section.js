@@ -15,7 +15,7 @@
 
         <div class="prostate-hero-visual">
           <div class="prostate-hero-img-wrap">
-            <img src="/kidney-03.jpg"
+            <img src="./kidney-03.jpg"
                  alt="Detailed kidney anatomical illustration" class="prostate-hero-img" />
             <div class="prostate-hero-img-overlay"></div>
           </div>
@@ -42,7 +42,7 @@
         <div class="prostate-grid">
           <article class="prostate-card">
             <div class="prostate-card-img-wrap">
-              <img src="/prostate-04.jpg"
+              <img src="./prostate-04.jpg"
                    alt="BPH enlarged prostate diagram" class="prostate-card-img" />
             </div>
             <h3>The Two Ingredients Big Pharma Hopes You Ignore</h3>
@@ -53,7 +53,7 @@
           </article>
           <article class="prostate-card">
             <div class="prostate-card-img-wrap">
-              <img src="/12_product_milk_thistle_nccih.jpg"
+              <img src="./12_product_milk_thistle_nccih.jpg"
                    alt="Milk thistle supplement" class="prostate-card-img" />
             </div>
             <h3>Aloe Vera + Shilajit: Source-Level <span class="pk">Prostate</span> Support</h3>
@@ -81,7 +81,7 @@
         </div>
 
         <div class="prostate-img-banner">
-          <img src="/protocol-kidneys.jpg"
+          <img src="./protocol-kidneys.jpg"
                alt="Kidney protocol illustration" class="prostate-banner-img" />
           <div class="prostate-banner-overlay">
             <span class="prostate-banner-label">Supporting <span class="pk-light">Prostate</span> &amp; Kidney Health Naturally</span>
