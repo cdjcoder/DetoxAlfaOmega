@@ -1,0 +1,205 @@
+.kidney-symptom-section {
+  background: linear-gradient(170deg, #060b1d 0%, #0d1735 48%, #080d20 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.kidney-symptom-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 680px 320px at 15% 8%, rgba(244, 63, 94, 0.07), transparent 72%),
+    radial-gradient(ellipse 580px 420px at 85% 82%, rgba(59, 130, 246, 0.08), transparent 72%);
+}
+
+.kidney-symptom-wrap {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.kidney-symptom-kicker {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  background: rgba(127, 29, 29, 0.35);
+  border: 1px solid rgba(248, 113, 113, 0.24);
+  color: #fecaca;
+  font-size: 0.76rem;
+  font-family: "Lexend Deca", "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.kidney-symptom-title {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.kidney-symptom-subtitle {
+  margin: 0.45rem 0 1.15rem;
+  color: #fca5a5;
+  font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.28rem);
+  font-weight: 600;
+}
+
+.kidney-symptom-intro {
+  display: grid;
+  gap: 0.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.kidney-symptom-intro p {
+  margin: 0;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+.kidney-symptom-note {
+  color: #cbd5e1 !important;
+  font-style: italic;
+}
+
+.kidney-symptom-heading {
+  margin: 1.7rem 0 1rem;
+  color: #fef2f2;
+  font-size: clamp(1.2rem, 1.05rem + 0.8vw, 1.8rem);
+  letter-spacing: -0.02em;
+}
+
+.kidney-symptom-heading-next {
+  margin-top: 2.2rem;
+  color: #fecaca;
+}
+
+.kidney-symptom-table-wrap {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.56);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.kidney-symptom-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+.kidney-symptom-table th,
+.kidney-symptom-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.92rem 1rem;
+}
+
+.kidney-symptom-table th {
+  color: #ffe4e6;
+  background: rgba(127, 29, 29, 0.34);
+  font-size: 0.79rem;
+  font-family: "Lexend Deca", "Poppins", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.kidney-symptom-table td {
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  color: #dbeafe;
+  font-size: 0.95rem;
+  line-height: 1.62;
+}
+
+.kidney-symptom-table td:first-child {
+  width: 38%;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.kidney-stage-card {
+  margin-top: 1.2rem;
+  padding: 1.2rem 1.2rem 1.05rem;
+  border-radius: 18px;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  background: linear-gradient(165deg, rgba(127, 29, 29, 0.2), rgba(15, 23, 42, 0.5));
+}
+
+.kidney-stage-card h4 {
+  margin: 0 0 0.7rem;
+  color: #ffe4e6;
+  font-size: clamp(1.1rem, 1.01rem + 0.45vw, 1.45rem);
+  letter-spacing: -0.02em;
+}
+
+.kidney-stage-card p {
+  margin: 0;
+  color: #e2e8f0;
+  line-height: 1.72;
+}
+
+.kidney-stage-card p + p {
+  margin-top: 0.7rem;
+}
+
+.kidney-impact-table td:first-child {
+  width: 24%;
+}
+
+.kidney-stage-final {
+  border-color: rgba(251, 113, 133, 0.34);
+  background: linear-gradient(168deg, rgba(127, 29, 29, 0.32), rgba(15, 23, 42, 0.58));
+}
+
+@media (max-width: 900px) {
+  .kidney-symptom-wrap {
+    width: min(1120px, 96vw);
+  }
+
+  .kidney-symptom-table th,
+  .kidney-symptom-table td {
+    padding: 0.75rem 0.78rem;
+  }
+
+  .kidney-symptom-table td {
+    font-size: 0.89rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .kidney-symptom-wrap {
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .kidney-symptom-kicker {
+    font-size: 0.68rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .kidney-symptom-subtitle {
+    margin-bottom: 0.95rem;
+  }
+
+  .kidney-symptom-table {
+    min-width: 660px;
+  }
+
+  .kidney-stage-card {
+    padding: 0.95rem;
+  }
+
+  .kidney-stage-card p {
+    font-size: 0.92rem;
+  }
+}

@@ -3,6 +3,7 @@
     './parallax.js',
     'https://unpkg.com/aos@2.3.4/dist/aos.js',
     './brand-motion.js',
+    './kidney-symptom-section.js',
     './prostate-section.js',
     './countup.js',
     './scroll-performance.js',
