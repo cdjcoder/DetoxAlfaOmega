@@ -1,5 +1,6 @@
 (function () {
-  var EMBED_IFRAME = '<iframe src="https://player.vimeo.com/video/1171498475?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" title="Kidney Detox"></iframe>';
+  var EMBED_IFRAME_EN = '<iframe src="https://player.vimeo.com/video/1171498475?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" title="Kidney Detox"></iframe>';
+  var EMBED_IFRAME_ES = '<iframe width="560" height="315" src="https://www.youtube.com/embed/uzxFkSD3cGs?si=GrOistQTpq73wdcc&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>';
 
   function getLangToggleLabel() {
     var buttons = document.querySelectorAll('button');
@@ -18,6 +19,12 @@
     return label.indexOf('🇪🇸 ES') !== -1;
   }
 
+  function isSpanishView() {
+    var label = getLangToggleLabel();
+    if (!label) return false;
+    return label.indexOf('🇺🇸 EN') !== -1;
+  }
+
   function renderReservationVideo() {
     var orderSection = document.getElementById('order');
     if (!orderSection) return;
@@ -27,16 +34,20 @@
 
     var existing = container.querySelector('.reservation-video-wrap');
 
-    if (!isEnglishView()) {
+    // Show video for both English and Spanish views
+    var shouldShowVideo = isEnglishView() || isSpanishView();
+    if (!shouldShowVideo) {
       if (existing) existing.remove();
       return;
     }
 
-    if (existing) return;
+    // Remove existing video to replace it with the correct language version
+    if (existing) existing.remove();
 
     var wrap = document.createElement('div');
     wrap.className = 'reservation-video-wrap mb-6 rounded-2xl overflow-hidden';
-    wrap.innerHTML = '<div style="position:relative;width:100%;padding-top:56.25%;background:#000;">' + EMBED_IFRAME + '</div>';
+    var embedIframe = isSpanishView() ? EMBED_IFRAME_ES : EMBED_IFRAME_EN;
+    wrap.innerHTML = '<div style="position:relative;width:100%;padding-top:56.25%;background:#000;">' + embedIframe + '</div>';
     container.insertBefore(wrap, container.firstChild);
   }
 
