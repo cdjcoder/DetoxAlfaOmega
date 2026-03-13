@@ -1,17 +1,11 @@
-(function () {
-  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (mediaQuery.matches) return;
-
-  const MAX_IMAGE_SHIFT_Y = 48;
-  const MAX_IMAGE_SHIFT_X = 18;
-  const MAX_SECTION_SHIFT_Y = 24;
-  const MAX_SECTION_SHIFT_X = 16;
-  const MAX_GRID_SHIFT = 42;
-  const MAX_SECTION_DEPTH = 26;
-  const MAX_SECTION_TILT = 4;
-  const HERO_IMAGE_SPEED = 0.12;
-  const BASE_IMAGE_SPEED = 0.08;
-  const BASE_SECTION_SPEED = 0.045;
+(() => {
+  const MAX_SECTION_SHIFT_Y = 80;
+  const MAX_SECTION_SHIFT_X = 60;
+  const MAX_SECTION_TILT = 8;
+  const MAX_SECTION_DEPTH = 24;
+  const MAX_GRID_SHIFT = 120;
+  const MAX_IMAGE_SHIFT_Y = 60;
+  const MAX_IMAGE_SHIFT_X = 50;
   const SECTION_VARS = [
     "--section-parallax-y",
     "--section-parallax-x",
@@ -22,79 +16,61 @@
     "--section-depth",
   ];
   const IMAGE_VARS = ["--image-parallax-y", "--image-parallax-x", "--image-shadow-depth"];
-
+  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   let sectionLayers = [];
   let imageLayers = [];
   let mutationObserver = null;
-  let ticking = false;
   let pointerX = 0;
   let pointerY = 0;
+  let scrollY = 0;
+  let animationFrameId = null;
+  let isScrolling = false;
+  let lastUpdateTime = 0;
+  const UPDATE_THROTTLE = 16; // ~60fps
 
-  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-
-  function imageSpeedFor(index) {
-    const variation = ((index % 5) - 2) * 0.01;
-    return BASE_IMAGE_SPEED + variation;
-  }
-
-  function sectionSpeedFor(index) {
-    const variation = (index % 2 === 0 ? 1 : -1) * 0.012;
-    return BASE_SECTION_SPEED + variation;
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
   }
 
   function collectSectionLayers() {
-    const sections = Array.from(document.querySelectorAll("section"));
-    sectionLayers = sections.map((section, index) => {
-      section.classList.add("parallax-section");
-      return {
-        el: section,
-        speed: sectionSpeedFor(index),
-      };
-    });
+    sectionLayers = Array.from(document.querySelectorAll(".parallax-section")).map((el) => ({
+      el,
+      speed: 0.5,
+    }));
   }
 
   function collectImageLayers() {
-    const heroSection = document.querySelector("section");
-    const images = Array.from(document.querySelectorAll("section img"));
-
-    imageLayers = images.map((img, index) => {
-      img.classList.add("parallax-image");
-      const isHeroImage = heroSection && heroSection.contains(img);
-      return {
-        el: img,
-        speed: isHeroImage ? HERO_IMAGE_SPEED : imageSpeedFor(index),
-      };
-    });
-  }
-
-  function requestTick() {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(updateParallax);
+    imageLayers = Array.from(document.querySelectorAll(".parallax-image")).map((el) => ({
+      el,
+      speed: 0.3,
+    }));
   }
 
   function handlePointerMove(event) {
-    const viewportWidth = window.innerWidth || 1;
-    const viewportHeight = window.innerHeight || 1;
-    pointerX = (event.clientX / viewportWidth - 0.5) * 2;
-    pointerY = (event.clientY / viewportHeight - 0.5) * 2;
-    requestTick();
+    pointerX = event.clientX / window.innerWidth - 0.5;
+    pointerY = event.clientY / window.innerHeight - 0.5;
   }
 
   function resetPointer() {
-    pointerX *= 0.5;
-    pointerY *= 0.5;
-    requestTick();
+    pointerX = 0;
+    pointerY = 0;
   }
 
   function updateParallax() {
-    ticking = false;
+    const now = Date.now();
+    if (now - lastUpdateTime < UPDATE_THROTTLE) {
+      animationFrameId = requestAnimationFrame(updateParallax);
+      return;
+    }
+    lastUpdateTime = now;
+
     const viewportHeight = window.innerHeight || 1;
     const viewportCenter = viewportHeight / 2;
 
     for (const layer of sectionLayers) {
       const rect = layer.el.getBoundingClientRect();
       if (rect.bottom < -120 || rect.top > viewportHeight + 120) continue;
+
       const distanceFromCenter = rect.top + rect.height / 2 - viewportCenter;
       const centerProximity = 1 - clamp(Math.abs(distanceFromCenter) / viewportHeight, 0, 1);
       const shiftY = clamp(-distanceFromCenter * layer.speed, -MAX_SECTION_SHIFT_Y, MAX_SECTION_SHIFT_Y);
@@ -121,6 +97,7 @@
     for (const layer of imageLayers) {
       const rect = layer.el.getBoundingClientRect();
       if (rect.bottom < -180 || rect.top > viewportHeight + 180) continue;
+
       const distanceFromCenter = rect.top + rect.height / 2 - viewportCenter;
       const centerProximity = 1 - clamp(Math.abs(distanceFromCenter) / viewportHeight, 0, 1);
       const shiftY = clamp(-distanceFromCenter * layer.speed, -MAX_IMAGE_SHIFT_Y, MAX_IMAGE_SHIFT_Y);
@@ -135,6 +112,26 @@
       layer.el.style.setProperty("--image-parallax-x", `${shiftX.toFixed(2)}px`);
       layer.el.style.setProperty("--image-shadow-depth", `${shadowDepth}px`);
     }
+
+    if (isScrolling) {
+      animationFrameId = requestAnimationFrame(updateParallax);
+    }
+  }
+
+  function requestTick() {
+    isScrolling = true;
+    if (!animationFrameId) {
+      animationFrameId = requestAnimationFrame(updateParallax);
+    }
+    // Stop updating after scroll ends
+    clearTimeout(window.scrollEndTimeout);
+    window.scrollEndTimeout = setTimeout(() => {
+      isScrolling = false;
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+    }, 150);
   }
 
   function syncTargets() {
@@ -151,7 +148,6 @@
       );
       if (changed) window.requestAnimationFrame(syncTargets);
     });
-
     mutationObserver.observe(document.getElementById("root") || document.body, {
       childList: true,
       subtree: true,
@@ -166,7 +162,10 @@
     window.removeEventListener("blur", resetPointer);
     mutationObserver?.disconnect();
     mutationObserver = null;
-
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
     sectionLayers.forEach(({ el }) => SECTION_VARS.forEach((cssVar) => el.style.removeProperty(cssVar)));
     imageLayers.forEach(({ el }) => IMAGE_VARS.forEach((cssVar) => el.style.removeProperty(cssVar)));
     document.documentElement.classList.remove("parallax-enabled");
@@ -182,13 +181,11 @@
     document.documentElement.classList.add("parallax-enabled");
     syncTargets();
     observeDomUpdates();
-
     window.addEventListener("scroll", requestTick, { passive: true });
     window.addEventListener("resize", requestTick, { passive: true });
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("pointerleave", resetPointer, { passive: true });
     window.addEventListener("blur", resetPointer, { passive: true });
-
     if (typeof mediaQuery.addEventListener === "function") {
       mediaQuery.addEventListener("change", handleMotionPreferenceChange);
     } else if (typeof mediaQuery.addListener === "function") {
