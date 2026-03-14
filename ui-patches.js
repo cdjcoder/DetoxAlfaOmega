@@ -98,7 +98,25 @@
 
   injectBackToTopStyles();
 
-  // ─── 3. Scroll listener for backToTop visibility ────────────────────────────
+  // ─── 3. Hide the React-rendered back-to-top button ────────────────────────────
+  // The React app bundle renders its own back-to-top button. We hide it and keep
+  // only our custom #backToTop button on the right.
+  function hideReactBackToTopButton() {
+    if (document.getElementById('react-btt-hide')) return;
+    var style = document.createElement('style');
+    style.id = 'react-btt-hide';
+    style.textContent = [
+      '/* Hide the React-rendered back-to-top button (the one without an id) */',
+      'button[hint="Back to top"]:not(#backToTop) {',
+      '  display: none !important;',
+      '}'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
+  hideReactBackToTopButton();
+
+  // ─── 4. Scroll listener for backToTop visibility ────────────────────────────
   // app.js may not initialize if langToggle id is missing; we add our own handler.
   function handleBackToTopScroll() {
     var btn = document.getElementById('backToTop');
