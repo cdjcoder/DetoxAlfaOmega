@@ -158,10 +158,18 @@
     const rootContainer = document.querySelector("#root > div");
     if (!rootContainer) return false;
 
-    const firstSection = rootContainer.querySelector(":scope > section");
+    const sections = rootContainer.querySelectorAll(":scope > section");
     const newSection = createKidneySymptomSection();
 
-    if (firstSection && firstSection.parentNode) {
+    if (sections.length >= 2) {
+      const secondSection = sections[1];
+      if (secondSection.nextElementSibling) {
+        secondSection.parentNode.insertBefore(newSection, secondSection.nextElementSibling);
+      } else {
+        secondSection.parentNode.appendChild(newSection);
+      }
+    } else if (sections.length === 1) {
+      const firstSection = sections[0];
       if (firstSection.nextElementSibling) {
         firstSection.parentNode.insertBefore(newSection, firstSection.nextElementSibling);
       } else {
