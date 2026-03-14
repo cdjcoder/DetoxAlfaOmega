@@ -671,25 +671,32 @@
       return true;
     }
 
-    // Find the symptom recognition section rendered by React
-    var sections = document.querySelectorAll('section');
-    var targetSection = null;
-    for (var i = 0; i < sections.length; i++) {
-      var text = sections[i].textContent || '';
-      if (text.includes('KIDNEYS NEED A RESCUE') || text.includes('RIÑONES NECESITAN') || text.includes('Symptom Recognition') || text.includes('Reconocimiento')) {
-        targetSection = sections[i];
-        break;
+    // The Symptom Recognition section is dynamically created by this script.
+    // Find the anchor point: insert AFTER the 24% Problem section (index 1)
+    // and BEFORE the Dialysis section.
+    var dialysisSection = document.getElementById('dialysis-business-model');
+    if (!dialysisSection) {
+      // Fallback: find by text
+      var sections = document.querySelectorAll('section');
+      for (var i = 0; i < sections.length; i++) {
+        var t = sections[i].textContent || '';
+        if (t.includes('Dialysis Machine') || t.includes('M\u00e1quina de Di\u00e1lisis')) {
+          dialysisSection = sections[i];
+          break;
+        }
       }
     }
+    if (!dialysisSection) return false;
 
-    if (!targetSection) return false;
-
-    // Replace the section
-    targetSection.id = SECTION_ID;
-    targetSection.innerHTML = '';
+    // Create the section element
+    var newSection = document.createElement('section');
+    newSection.id = SECTION_ID;
     var wrap = document.createElement('div');
     wrap.className = 'ks-wrap';
-    targetSection.appendChild(wrap);
+    newSection.appendChild(wrap);
+
+    // Insert BEFORE the dialysis section
+    dialysisSection.parentNode.insertBefore(newSection, dialysisSection);
     injectStyles();
     render();
     return true;
