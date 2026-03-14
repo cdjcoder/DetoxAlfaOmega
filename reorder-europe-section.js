@@ -1,21 +1,22 @@
 (function () {
   // This script ensures the correct section order:
   // ... → Symptom Recognition → The Perfect Business Model (Dialysis) → The Forbidden Ingredients → ...
-  // It finds both sections by ID/content and inserts Dialysis immediately before Forbidden Ingredients.
+  //
+  // It runs ONCE at 3500ms (after all dynamic sections are injected) and
+  // places Dialysis immediately before Forbidden Ingredients.
+  // It does NOT retry after success to avoid re-ordering already-correct sections.
 
   function reorderSections() {
     // Find the Forbidden Ingredients / Europe section
-    var europeSection = null;
-    var sections = document.querySelectorAll('section');
-    for (var i = 0; i < sections.length; i++) {
-      var text = sections[i].innerText || sections[i].textContent || '';
-      if (
-        text.includes('Europe Said No') ||
-        text.includes('Forbidden Ingredients') ||
-        sections[i].id === 'truth'
-      ) {
-        europeSection = sections[i];
-        break;
+    var europeSection = document.getElementById('truth');
+    if (!europeSection) {
+      var sections = document.querySelectorAll('section');
+      for (var i = 0; i < sections.length; i++) {
+        var text = sections[i].innerText || sections[i].textContent || '';
+        if (text.includes('Europe Said No') || text.includes('Forbidden Ingredients')) {
+          europeSection = sections[i];
+          break;
+        }
       }
     }
     if (!europeSection) return false;
@@ -23,22 +24,23 @@
     // Find the Dialysis section
     var dialysisSection = document.getElementById('dialysis-business-model');
     if (!dialysisSection) {
-      for (var j = 0; j < sections.length; j++) {
-        var t = sections[j].innerText || sections[j].textContent || '';
-        if (t.includes('Dialysis Machine') || t.includes('$90,000') || t.includes('ESRD')) {
-          dialysisSection = sections[j];
+      var allSections = document.querySelectorAll('section');
+      for (var j = 0; j < allSections.length; j++) {
+        var t = allSections[j].innerText || allSections[j].textContent || '';
+        if (t.includes('Dialysis Machine') || t.includes('$90,000') || t.includes('ESRD entitlement')) {
+          dialysisSection = allSections[j];
           break;
         }
       }
     }
     if (!dialysisSection) return false;
 
-    // Check if they are already in the correct order (Dialysis immediately before Europe)
+    // Check if Dialysis is already immediately before Forbidden Ingredients
     if (europeSection.previousElementSibling === dialysisSection) {
-      return true; // Already correct
+      return true; // Already correct, do nothing
     }
 
-    // Move Dialysis to immediately before the Europe/Forbidden section
+    // Move Dialysis to immediately before Forbidden Ingredients
     europeSection.parentNode.insertBefore(dialysisSection, europeSection);
 
     if (window.AOS) {
@@ -50,22 +52,10 @@
   }
 
   function initWhenReady() {
-    var retries = 0;
-    var maxRetries = 80;
-
-    function attemptReorder() {
-      var done = reorderSections();
-      if (!done && retries < maxRetries) {
-        retries++;
-        window.requestAnimationFrame(attemptReorder);
-      }
-    }
-
-    // Wait for React + all dynamic section injections to complete
-    // Use 3000ms to ensure kidney-symptom-section.js has already injected its section
+    // Run once at 3500ms — after all dynamic sections (dialysis + kidney symptom) are injected
     setTimeout(function () {
-      window.requestAnimationFrame(attemptReorder);
-    }, 3000);
+      reorderSections();
+    }, 3500);
   }
 
   if (document.readyState === 'loading') {
