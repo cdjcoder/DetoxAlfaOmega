@@ -7,7 +7,7 @@
     var buttons = document.querySelectorAll("button");
     for (var i = 0; i < buttons.length; i += 1) {
       var txt = (buttons[i].textContent || "").trim();
-      if (txt.indexOf("🇪🇸 ES") !== -1 || txt.indexOf("🇺🇸 EN") !== -1) {
+      if (txt.indexOf("🇲🇽 ES") !== -1 || txt.indexOf("🇺🇸 EN") !== -1) {
         return txt;
       }
     }
@@ -17,12 +17,15 @@
   function isEnglishView() {
     var label = getLangToggleLabel();
     if (!label) return true;
-    return label.indexOf("🇪🇸 ES") !== -1;
+    // Toggle shows 🇲🇽 ES when in English mode (can switch to Spanish)
+    // Toggle shows 🇺🇸 EN when in Spanish mode (can switch to English)
+    return label.indexOf("🇲🇽 ES") !== -1;
   }
 
   function isSpanishView() {
     var label = getLangToggleLabel();
     if (!label) return false;
+    // Toggle shows 🇺🇸 EN when in Spanish mode (can switch to English)
     return label.indexOf("🇺🇸 EN") !== -1;
   }
 
@@ -65,7 +68,7 @@
       if (!button) return;
 
       var label = (button.textContent || "").trim();
-      if (label.indexOf("🇪🇸 ES") !== -1 || label.indexOf("🇺🇸 EN") !== -1) {
+      if (label.indexOf("🇲🇽 ES") !== -1 || label.indexOf("🇺🇸 EN") !== -1) {
         window.setTimeout(renderInfographic, 200);
       }
     });
