@@ -161,7 +161,21 @@
     const sections = rootContainer.querySelectorAll(":scope > section");
     const newSection = createKidneySymptomSection();
 
-    if (sections.length >= 2) {
+    if (sections.length >= 4) {
+      const fourthSection = sections[3];
+      if (fourthSection.nextElementSibling) {
+        fourthSection.parentNode.insertBefore(newSection, fourthSection.nextElementSibling);
+      } else {
+        fourthSection.parentNode.appendChild(newSection);
+      }
+    } else if (sections.length >= 3) {
+      const thirdSection = sections[2];
+      if (thirdSection.nextElementSibling) {
+        thirdSection.parentNode.insertBefore(newSection, thirdSection.nextElementSibling);
+      } else {
+        thirdSection.parentNode.appendChild(newSection);
+      }
+    } else if (sections.length >= 2) {
       const secondSection = sections[1];
       if (secondSection.nextElementSibling) {
         secondSection.parentNode.insertBefore(newSection, secondSection.nextElementSibling);
