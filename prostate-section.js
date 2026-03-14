@@ -68,15 +68,13 @@
   };
 
   function isSpanishMode() {
-    var toggleBtn = document.querySelector('button:has-text("🇲🇽 ES")');
-    if (toggleBtn) return true;
-    
-    // Fallback: check for button with Mexican flag emoji
+    // Check for button with Mexican flag emoji (Spanish mode)
     var buttons = document.querySelectorAll('button');
     for (var i = 0; i < buttons.length; i++) {
-      if (buttons[i].textContent.includes('🇲🇽')) return true;
+      var text = buttons[i].textContent || '';
+      if (text.includes('🇲🇽')) return true; // Mexican flag = Spanish mode
     }
-    return false;
+    return false; // Default to English if no Mexican flag found
   }
 
   function createProstateSection(lang = 'en') {
