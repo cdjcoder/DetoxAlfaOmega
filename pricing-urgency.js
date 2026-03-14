@@ -239,27 +239,28 @@
     var orderSection = document.getElementById('order');
     if (!orderSection) return false;
 
-    // Find the heading container (the first child div with the title)
-    var headingBlock = orderSection.querySelector('div > div'); // max-w-5xl > first b-wrapper
-    if (!headingBlock) return false;
-
-    // Find or create the banner container
+    // Find or update the banner
     var existing = document.getElementById('pricing-urgency-banner');
     if (existing) {
-      // Update language in place
-      existing.outerHTML = buildBanner(lang);
+      var wrapper2 = document.createElement('div');
+      wrapper2.innerHTML = buildBanner(lang);
+      existing.replaceWith(wrapper2.firstChild);
       return true;
     }
 
-    // Insert the banner right after the heading block (before the grid)
-    var grid = orderSection.querySelector('.grid');
+    // Find the grid (the two-column layout with kit details + form)
+    var grid = orderSection.querySelector('.grid.grid-cols-1.lg\\:grid-cols-2');
+    if (!grid) {
+      // Fallback: any grid inside the order section
+      grid = orderSection.querySelector('.grid');
+    }
     if (!grid) return false;
 
     var wrapper = document.createElement('div');
     wrapper.innerHTML = buildBanner(lang);
     var banner = wrapper.firstChild;
 
-    // Insert before the grid
+    // Insert before the grid (inside the max-w-5xl container)
     grid.parentNode.insertBefore(banner, grid);
     return true;
   }
@@ -272,10 +273,10 @@
       var attempts = 0;
       var interval = setInterval(function () {
         attempts++;
-        if (injectOrUpdateBanner() || attempts > 30) {
+        if (injectOrUpdateBanner() || attempts > 60) {
           clearInterval(interval);
         }
-      }, 300);
+      }, 200);
     }
   }
 
