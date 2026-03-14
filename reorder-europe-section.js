@@ -1,76 +1,74 @@
 (function () {
-  // This script moves the "Why Europe Said No and America Said Yes" section
-  // (The Forbidden Ingredients) down by one position, placing it after
-  // the section that currently follows it.
+  // This script ensures the correct section order:
+  // ... → Symptom Recognition → The Perfect Business Model (Dialysis) → The Forbidden Ingredients → ...
+  // It finds both sections by ID/content and inserts Dialysis immediately before Forbidden Ingredients.
 
   function reorderSections() {
-    const rootContainer = document.querySelector("#root > div");
-    if (!rootContainer) return false;
-
-    const sections = rootContainer.querySelectorAll(":scope > section");
-
-    // We need at least 5 sections to perform the swap
-    if (sections.length < 5) return false;
-
-    // Find the "Forbidden Ingredients / Why Europe Said No" section by content
-    let europeSection = null;
-    let europeSectionIndex = -1;
-
-    for (let i = 0; i < sections.length; i++) {
-      const text = (sections[i].innerText || sections[i].textContent || "");
-      if (text.includes("Europe Said No") || text.includes("Forbidden Ingredients") || text.includes("Forbidden")) {
+    // Find the Forbidden Ingredients / Europe section
+    var europeSection = null;
+    var sections = document.querySelectorAll('section');
+    for (var i = 0; i < sections.length; i++) {
+      var text = sections[i].innerText || sections[i].textContent || '';
+      if (
+        text.includes('Europe Said No') ||
+        text.includes('Forbidden Ingredients') ||
+        sections[i].id === 'truth'
+      ) {
         europeSection = sections[i];
-        europeSectionIndex = i;
         break;
       }
     }
+    if (!europeSection) return false;
 
-    if (!europeSection || europeSectionIndex === -1) return false;
+    // Find the Dialysis section
+    var dialysisSection = document.getElementById('dialysis-business-model');
+    if (!dialysisSection) {
+      for (var j = 0; j < sections.length; j++) {
+        var t = sections[j].innerText || sections[j].textContent || '';
+        if (t.includes('Dialysis Machine') || t.includes('$90,000') || t.includes('ESRD')) {
+          dialysisSection = sections[j];
+          break;
+        }
+      }
+    }
+    if (!dialysisSection) return false;
 
-    // Get the section immediately after it
-    const nextSection = sections[europeSectionIndex + 1];
-    if (!nextSection) return false;
+    // Check if they are already in the correct order (Dialysis immediately before Europe)
+    if (europeSection.previousElementSibling === dialysisSection) {
+      return true; // Already correct
+    }
 
-    // Perform the swap: move europeSection to after nextSection
-    const parent = europeSection.parentNode;
-    const afterNext = nextSection.nextElementSibling;
+    // Move Dialysis to immediately before the Europe/Forbidden section
+    europeSection.parentNode.insertBefore(dialysisSection, europeSection);
 
-    if (afterNext) {
-      parent.insertBefore(europeSection, afterNext);
-    } else {
-      parent.appendChild(europeSection);
+    if (window.AOS) {
+      if (typeof window.AOS.refreshHard === 'function') window.AOS.refreshHard();
+      else if (typeof window.AOS.refresh === 'function') window.AOS.refresh();
     }
 
     return true;
   }
 
   function initWhenReady() {
-    let retries = 0;
-    const maxRetries = 80;
+    var retries = 0;
+    var maxRetries = 80;
 
-    const attemptReorder = () => {
-      const didReorder = reorderSections();
-      if (!didReorder && retries < maxRetries) {
-        retries += 1;
+    function attemptReorder() {
+      var done = reorderSections();
+      if (!done && retries < maxRetries) {
+        retries++;
         window.requestAnimationFrame(attemptReorder);
-        return;
       }
+    }
 
-      if (window.AOS && typeof window.AOS.refreshHard === "function") {
-        window.AOS.refreshHard();
-      } else if (window.AOS && typeof window.AOS.refresh === "function") {
-        window.AOS.refresh();
-      }
-    };
-
-    // Wait for React to render and dynamic sections to be injected
-    setTimeout(() => {
+    // Wait for React + dynamic section injections to complete
+    setTimeout(function () {
       window.requestAnimationFrame(attemptReorder);
-    }, 1500);
+    }, 1800);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initWhenReady, { once: true });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWhenReady, { once: true });
   } else {
     initWhenReady();
   }
