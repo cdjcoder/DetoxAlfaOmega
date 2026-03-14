@@ -98,6 +98,20 @@
 
   injectBackToTopStyles();
 
+  // ─── 3. Scroll listener for backToTop visibility ────────────────────────────
+  // app.js may not initialize if langToggle id is missing; we add our own handler.
+  function handleBackToTopScroll() {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', handleBackToTopScroll, { passive: true });
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       ensureBackToTopContent();
