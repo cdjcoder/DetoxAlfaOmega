@@ -61,10 +61,11 @@
       }
     }
 
-    // Wait for React + dynamic section injections to complete
+    // Wait for React + all dynamic section injections to complete
+    // Use 3000ms to ensure kidney-symptom-section.js has already injected its section
     setTimeout(function () {
       window.requestAnimationFrame(attemptReorder);
-    }, 1800);
+    }, 3000);
   }
 
   if (document.readyState === 'loading') {
