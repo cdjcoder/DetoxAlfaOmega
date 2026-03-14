@@ -672,21 +672,23 @@
     }
 
     // The Symptom Recognition section is dynamically created by this script.
-    // Find the anchor point: insert AFTER the 24% Problem section (index 1)
-    // and BEFORE the Dialysis section.
-    var dialysisSection = document.getElementById('dialysis-business-model');
-    if (!dialysisSection) {
-      // Fallback: find by text
+    // Strategy: insert BEFORE the Forbidden Ingredients (truth) section.
+    // The reorder-europe-section.js will then move Dialysis between
+    // Symptom Recognition and Forbidden Ingredients, giving the correct order:
+    // Symptom Recognition → Dialysis → Forbidden Ingredients
+    var anchorSection = document.getElementById('truth');
+    if (!anchorSection) {
+      // Fallback: find Forbidden Ingredients by text
       var sections = document.querySelectorAll('section');
       for (var i = 0; i < sections.length; i++) {
         var t = sections[i].textContent || '';
-        if (t.includes('Dialysis Machine') || t.includes('M\u00e1quina de Di\u00e1lisis')) {
-          dialysisSection = sections[i];
+        if (t.includes('Europe Said No') || t.includes('Forbidden Ingredients')) {
+          anchorSection = sections[i];
           break;
         }
       }
     }
-    if (!dialysisSection) return false;
+    if (!anchorSection) return false;
 
     // Create the section element
     var newSection = document.createElement('section');
@@ -695,8 +697,8 @@
     wrap.className = 'ks-wrap';
     newSection.appendChild(wrap);
 
-    // Insert BEFORE the dialysis section
-    dialysisSection.parentNode.insertBefore(newSection, dialysisSection);
+    // Insert BEFORE the Forbidden Ingredients section
+    anchorSection.parentNode.insertBefore(newSection, anchorSection);
     injectStyles();
     render();
     return true;
